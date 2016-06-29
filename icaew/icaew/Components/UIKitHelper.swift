@@ -56,14 +56,6 @@ extension UIScreen {
 
 public extension UIColor {
     
-    public static func phPurple() -> UIColor {
-        return UIColor(hexString: "A32ECF")!
-    }
-    
-    public static func phBlue() -> UIColor {
-        return UIColor(hexString: "10BBFF")!
-    }
-    
     private func hueColorWithBrightnessAmount(amount: CGFloat) -> UIColor {
         var hue         : CGFloat = 0
         var saturation  : CGFloat = 0
@@ -81,37 +73,6 @@ public extension UIColor {
     }
     
 }
-
-
-extension UIFont {
-    
-    public static func phBold(size: CGFloat) -> UIFont {
-        return UIFont(name: "Lato-Bold", size: size)!
-    }
-    
-    public static func phItalic(size: CGFloat) -> UIFont {
-        return UIFont(name: "Lato-Italic", size: size)!
-    }
-    
-    public static func phRegular(size: CGFloat) -> UIFont {
-        return UIFont(name: "Lato-Regular", size: size)!
-    }
-    
-    public static func phLight(size: CGFloat) -> UIFont {
-        return UIFont(name: "Lato-Light", size: size)!
-    }
-    
-    public class func checkFontFamilyNames() {
-        for family: String in UIFont.familyNames() {
-            print("\(family)")
-            for names: String in UIFont.fontNamesForFamilyName(family) {
-                print("== \(names)")
-            }
-        }
-    }
-    
-}
-
 
 extension UIImage {
     
