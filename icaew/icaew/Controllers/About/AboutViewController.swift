@@ -13,13 +13,16 @@ class AboutViewController: BaseViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet weak var tableView: UITableView!
     
-    var aboutDict: NSDictionary?
+    var aboutDict: [String : AnyObject]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.setupNavigationBar(title: "About Us")
+        self.tableView.tableFooterView = UIView()
+        
+        loadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,8 +32,24 @@ class AboutViewController: BaseViewController, UITableViewDataSource, UITableVie
     
     // MARK: - Data
     func loadData() {
-//        Alamofire.req
-//        Alamofire.request(.GET, "http://icaew-admin.jiggieapp.com/api/about", parameters: nil, encoding: <#T##ParameterEncoding#>, headers: <#T##[String : String]?#>
+        
+        if let request = NetworkManager.request(.GET, "about") {
+            request.responseJSON(completionHandler: { (response) in
+                switch response.result {
+                case .Success(let jsonResult):
+                    print(jsonResult)
+                    
+                    if let jsonDict = jsonResult as? [String : AnyObject] {
+                        if let data = jsonDict["data"] as? [String : AnyObject] {
+                            print(data)
+                        }
+                    }
+                    
+                case .Failure(let error):
+                    print(error)
+                }
+            })
+        }
     }
     
     // MARK: -  UITableviewDataSource
@@ -39,7 +58,10 @@ class AboutViewController: BaseViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0;
+        if let aboutDict = self.aboutDict {
+            return aboutDict.count
+        }
+        return 0
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -47,7 +69,7 @@ class AboutViewController: BaseViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
+        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         
         cell.textLabel?.text = "test"
         

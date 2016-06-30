@@ -13,7 +13,7 @@ import SystemConfiguration
 
 class NetworkManager {
     
-    static let APIBaseURL = "https://api.jiggieapp.com/app/v3"
+    static let APIBaseURL = "http://icaew-admin.jiggieapp.com/api/"
     
     /**
      A wrapper function from `Alamofire.request`. Creates a request using the shared manager instance
