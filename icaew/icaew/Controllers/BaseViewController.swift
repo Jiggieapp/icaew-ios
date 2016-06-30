@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Mohammad Nuruddin Effendi. All rights reserved.
 //
 import UIKit
-import UIAlertView_Blocks
+import UIAlertControllerExtension
 import SwiftHEXColors
 import SVProgressHUD
 
@@ -218,13 +218,15 @@ class BaseViewController: UIViewController {
     }
     
     // MARK: Alert View
-    func showAlertView(withMessage message: String?, cancelButtonTitle: String = "OK", otherButtonTitles: [String]? = nil, tapBlock: UIAlertViewCompletionBlock? = nil) {
+    func showAlertView(withMessage message: String?, cancelButtonTitle: String = "OK", confirmButton: String?, tapHandler: ActionHandler?) {
         dispatch_async(GlobalMainQueue) {
-            UIAlertView.showWithTitle(message,
-                                      message: nil,
-                                      cancelButtonTitle: cancelButtonTitle,
-                                      otherButtonTitles: otherButtonTitles,
-                                      tapBlock: tapBlock)
+            var actionTitles = [cancelButtonTitle]
+            
+            if let confirmButton = confirmButton {
+                actionTitles.append(confirmButton)
+            }
+            
+            UIAlertController.present(title: message, message: nil, actionTitles: actionTitles, handler: tapHandler)
         }
     }
     
