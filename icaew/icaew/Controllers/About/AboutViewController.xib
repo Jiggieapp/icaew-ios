@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController" customModule="icaew" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="KYq-xY-0nH" id="xqd-LC-VxS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +15,45 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KYq-xY-0nH">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="tTZ-WT-Mj6"/>
+                        <outlet property="delegate" destination="-1" id="qeC-eT-05k"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="KYq-xY-0nH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="HqK-gq-q7r"/>
+                <constraint firstItem="KYq-xY-0nH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RfU-sJ-2ay"/>
+                <constraint firstAttribute="bottom" secondItem="KYq-xY-0nH" secondAttribute="bottom" id="q0i-Wj-ps3"/>
+                <constraint firstAttribute="trailing" secondItem="KYq-xY-0nH" secondAttribute="trailing" id="zJy-Wt-TD1"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="KYq-xY-0nH"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="HqK-gq-q7r"/>
+                    <exclude reference="RfU-sJ-2ay"/>
+                    <exclude reference="q0i-Wj-ps3"/>
+                    <exclude reference="zJy-Wt-TD1"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="KYq-xY-0nH"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="HqK-gq-q7r"/>
+                    <include reference="RfU-sJ-2ay"/>
+                    <include reference="q0i-Wj-ps3"/>
+                    <include reference="zJy-Wt-TD1"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

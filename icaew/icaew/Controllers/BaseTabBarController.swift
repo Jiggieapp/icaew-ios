@@ -27,8 +27,8 @@ class BaseTabBarController: UITabBarController {
         let programmesNavigationController = UINavigationController(rootViewController: ProgrammesViewController())
         let eventsNavigationController = UINavigationController(rootViewController: EventCountryListViewController())
         let universityNavigationController = UINavigationController(rootViewController: UniversityCountryListViewController())
-        let contactNavigationController = UINavigationController(rootViewController: ContactCountryListViewController())
         let aboutNavigationController = UINavigationController(rootViewController: AboutViewController())
+        let contactNavigationController = UINavigationController(rootViewController: ContactCountryListViewController())
         
         let tabBarController = BaseTabBarController()
         tabBarController.tabBar.translucent = false
@@ -37,8 +37,8 @@ class BaseTabBarController: UITabBarController {
         tabBarController.viewControllers = [programmesNavigationController,
                                             eventsNavigationController,
                                             universityNavigationController,
-                                            contactNavigationController,
-                                            aboutNavigationController]
+                                            aboutNavigationController,
+                                            contactNavigationController]
         
         let titleTextAttributes = [NSFontAttributeName : UIFont.systemFontOfSize(9)];
         let titlePosition = UIOffsetMake(0, -3)

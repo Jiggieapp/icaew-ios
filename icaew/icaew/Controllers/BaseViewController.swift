@@ -12,6 +12,12 @@ import SVProgressHUD
 
 class BaseViewController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        self.setupNavigationBar(translucent: false)
+    }
+    
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .Default
     }
