@@ -10,6 +10,8 @@
 		11C95B58935B7C084479B273 /* Pods_icaew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D129A2C174A04503AF7979 /* Pods_icaew.framework */; };
 		2F7725DBC113C4FF81153D28 /* Pods_icaewUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730C4341F42939BE9B069F39 /* Pods_icaewUITests.framework */; };
 		5496979489430A3C4BF4B90F /* Pods_icaewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA817776282BCDE5738959CB /* Pods_icaewTests.framework */; };
+		938E085D1D2677E200CAAFDA /* ProgrammesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E085B1D2677E200CAAFDA /* ProgrammesTableViewCell.swift */; };
+		938E085E1D2677E200CAAFDA /* ProgrammesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 938E085C1D2677E200CAAFDA /* ProgrammesTableViewCell.xib */; };
 		DA00A44D1D237BEA00CDEA7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA00A44C1D237BEA00CDEA7B /* AppDelegate.swift */; };
 		DA00A4591D237BEA00CDEA7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA00A4571D237BEA00CDEA7B /* LaunchScreen.storyboard */; };
 		DA00A4641D237BEA00CDEA7B /* icaewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA00A4631D237BEA00CDEA7B /* icaewTests.swift */; };
@@ -55,6 +57,8 @@
 		2FF94DF2B21FEBA56FDBBBB7 /* Pods-icaewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-icaewTests/Pods-icaewTests.debug.xcconfig"; sourceTree = "<group>"; };
 		730C4341F42939BE9B069F39 /* Pods_icaewUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_icaewUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		780F19071E0500EBF17C24BF /* Pods-icaewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaewUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-icaewUITests/Pods-icaewUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		938E085B1D2677E200CAAFDA /* ProgrammesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammesTableViewCell.swift; sourceTree = "<group>"; };
+		938E085C1D2677E200CAAFDA /* ProgrammesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgrammesTableViewCell.xib; sourceTree = "<group>"; };
 		943C322C20F90EBC1B26C217 /* Pods-icaew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaew.release.xcconfig"; path = "Pods/Target Support Files/Pods-icaew/Pods-icaew.release.xcconfig"; sourceTree = "<group>"; };
 		A4D129A2C174A04503AF7979 /* Pods_icaew.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_icaew.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA817776282BCDE5738959CB /* Pods_icaewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_icaewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +89,6 @@
 		DA00A4A11D23BB2700CDEA7B /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		DA00A4A41D23BB4500CDEA7B /* ContactCountryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCountryListViewController.swift; sourceTree = "<group>"; };
 		DA00A4A51D23BB4500CDEA7B /* ContactCountryListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactCountryListViewController.xib; sourceTree = "<group>"; };
-		DA5091BF1D26497D00EE492A /* icaew-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "icaew-Bridging-Header.h"; sourceTree = "<group>"; };
 		DF3D20665CF70BA7270597B9 /* Pods-icaewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-icaewTests/Pods-icaewTests.release.xcconfig"; sourceTree = "<group>"; };
 		ECDFA172AD05F163FD57425C /* Pods-icaewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaewUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-icaewUITests/Pods-icaewUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +121,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		938E08591D2677CA00CAAFDA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				938E085A1D2677CA00CAAFDA /* Programmes */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		938E085A1D2677CA00CAAFDA /* Programmes */ = {
+			isa = PBXGroup;
+			children = (
+				938E085B1D2677E200CAAFDA /* ProgrammesTableViewCell.swift */,
+				938E085C1D2677E200CAAFDA /* ProgrammesTableViewCell.xib */,
+			);
+			path = Programmes;
+			sourceTree = "<group>";
+		};
 		A336AB3013CFEB4530944BBC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +190,7 @@
 				DA00A4811D23A9E900CDEA7B /* Controllers */,
 				DA00A4871D23A9E900CDEA7B /* ExtraLibraries */,
 				DA00A4881D23A9E900CDEA7B /* Models */,
+				938E08591D2677CA00CAAFDA /* Views */,
 				DA00A4891D23A9E900CDEA7B /* Resources */,
 				DA00A44C1D237BEA00CDEA7B /* AppDelegate.swift */,
 				DA00A4571D237BEA00CDEA7B /* LaunchScreen.storyboard */,
@@ -203,7 +224,6 @@
 				DA00A47E1D23A9E900CDEA7B /* FoundationHelper.swift */,
 				DA00A47F1D23A9E900CDEA7B /* NetworkHelper.swift */,
 				DA00A4801D23A9E900CDEA7B /* UIKitHelper.swift */,
-				DA5091BF1D26497D00EE492A /* icaew-Bridging-Header.h */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -296,12 +316,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA00A4731D237BEA00CDEA7B /* Build configuration list for PBXNativeTarget "icaew" */;
 			buildPhases = (
+				CCAA4F5DE09BAB1BD3941EB8 /* [CP] Check Pods Manifest.lock */,
 				62C1C43940FE9EA93D607B40 /* [CP] Check Pods Manifest.lock */,
 				DA00A4451D237BEA00CDEA7B /* Sources */,
 				DA00A4461D237BEA00CDEA7B /* Frameworks */,
 				DA00A4471D237BEA00CDEA7B /* Resources */,
 				774F058CFD5F6DF2FEE4411D /* [CP] Embed Pods Frameworks */,
 				22CD0A91F566F7A2658E0752 /* [CP] Copy Pods Resources */,
+				3E0CA8C9E3F20A0EF378ADCF /* 📦 Embed Pods Frameworks */,
+				196D2B5B945EE40EBEAF4F9E /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -316,12 +339,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA00A4761D237BEA00CDEA7B /* Build configuration list for PBXNativeTarget "icaewTests" */;
 			buildPhases = (
+				58E2829A1CE4B34E3F6ACE62 /* [CP] Check Pods Manifest.lock */,
 				84DAEA3BD48FB017F7708C21 /* [CP] Check Pods Manifest.lock */,
 				DA00A45B1D237BEA00CDEA7B /* Sources */,
 				DA00A45C1D237BEA00CDEA7B /* Frameworks */,
 				DA00A45D1D237BEA00CDEA7B /* Resources */,
 				0AAA46B8471C1A624DCADCCB /* [CP] Embed Pods Frameworks */,
 				F9D7CC23F497D3208E36BB92 /* [CP] Copy Pods Resources */,
+				2087DDEAA5496D3E05536100 /* 📦 Embed Pods Frameworks */,
+				6058EFA530E5BF55FB10FBCA /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -337,11 +363,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA00A4791D237BEA00CDEA7B /* Build configuration list for PBXNativeTarget "icaewUITests" */;
 			buildPhases = (
+				05CF33F0336FE2BE25E6F2A6 /* [CP] Check Pods Manifest.lock */,
 				0787F1B0822A9806C20DEB0D /* [CP] Check Pods Manifest.lock */,
 				DA00A4661D237BEA00CDEA7B /* Sources */,
 				DA00A4671D237BEA00CDEA7B /* Frameworks */,
 				DA00A4681D237BEA00CDEA7B /* Resources */,
 				2EEA73E258A446040A9C8D83 /* [CP] Copy Pods Resources */,
+				79C77BC795A487AC5AB743C8 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -405,6 +433,7 @@
 				DA00A4971D23BA8600CDEA7B /* ProgrammesViewController.xib in Resources */,
 				DA00A4591D237BEA00CDEA7B /* LaunchScreen.storyboard in Resources */,
 				DA00A4A71D23BB4500CDEA7B /* ContactCountryListViewController.xib in Resources */,
+				938E085E1D2677E200CAAFDA /* ProgrammesTableViewCell.xib in Resources */,
 				DA00A48F1D23A9E900CDEA7B /* Assets.xcassets in Resources */,
 				DA00A4A31D23BB2700CDEA7B /* AboutViewController.xib in Resources */,
 				DA00A49F1D23BB1300CDEA7B /* UniversityCountryListViewController.xib in Resources */,
@@ -428,6 +457,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		05CF33F0336FE2BE25E6F2A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		0787F1B0822A9806C20DEB0D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -451,6 +495,36 @@
 			inputPaths = (
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-icaewTests/Pods-icaewTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		196D2B5B945EE40EBEAF4F9E /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-icaew/Pods-icaew-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2087DDEAA5496D3E05536100 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +562,51 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-icaewUITests/Pods-icaewUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3E0CA8C9E3F20A0EF378ADCF /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-icaew/Pods-icaew-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58E2829A1CE4B34E3F6ACE62 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6058EFA530E5BF55FB10FBCA /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-icaewTests/Pods-icaewTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		62C1C43940FE9EA93D607B40 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -518,7 +637,37 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-icaew/Pods-icaew-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		79C77BC795A487AC5AB743C8 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-icaewUITests/Pods-icaewUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		84DAEA3BD48FB017F7708C21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CCAA4F5DE09BAB1BD3941EB8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -567,6 +716,7 @@
 				DA00A4931D23BA6300CDEA7B /* BaseViewController.swift in Sources */,
 				DA00A48E1D23A9E900CDEA7B /* UIKitHelper.swift in Sources */,
 				DA00A49E1D23BB1300CDEA7B /* UniversityCountryListViewController.swift in Sources */,
+				938E085D1D2677E200CAAFDA /* ProgrammesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,7 +857,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.partyhost.icaew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "icaew/Components/icaew-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -723,7 +872,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.partyhost.icaew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "icaew/Components/icaew-Bridging-Header.h";
 			};
 			name = Release;
 		};
