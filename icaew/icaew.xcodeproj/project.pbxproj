@@ -10,6 +10,8 @@
 		11C95B58935B7C084479B273 /* Pods_icaew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D129A2C174A04503AF7979 /* Pods_icaew.framework */; };
 		2F7725DBC113C4FF81153D28 /* Pods_icaewUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730C4341F42939BE9B069F39 /* Pods_icaewUITests.framework */; };
 		5496979489430A3C4BF4B90F /* Pods_icaewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA817776282BCDE5738959CB /* Pods_icaewTests.framework */; };
+		938E085D1D2677E200CAAFDA /* ProgrammesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E085B1D2677E200CAAFDA /* ProgrammesTableViewCell.swift */; };
+		938E085E1D2677E200CAAFDA /* ProgrammesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 938E085C1D2677E200CAAFDA /* ProgrammesTableViewCell.xib */; };
 		DA00A44D1D237BEA00CDEA7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA00A44C1D237BEA00CDEA7B /* AppDelegate.swift */; };
 		DA00A4591D237BEA00CDEA7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA00A4571D237BEA00CDEA7B /* LaunchScreen.storyboard */; };
 		DA00A4641D237BEA00CDEA7B /* icaewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA00A4631D237BEA00CDEA7B /* icaewTests.swift */; };
@@ -55,6 +57,8 @@
 		2FF94DF2B21FEBA56FDBBBB7 /* Pods-icaewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-icaewTests/Pods-icaewTests.debug.xcconfig"; sourceTree = "<group>"; };
 		730C4341F42939BE9B069F39 /* Pods_icaewUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_icaewUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		780F19071E0500EBF17C24BF /* Pods-icaewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaewUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-icaewUITests/Pods-icaewUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		938E085B1D2677E200CAAFDA /* ProgrammesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammesTableViewCell.swift; sourceTree = "<group>"; };
+		938E085C1D2677E200CAAFDA /* ProgrammesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgrammesTableViewCell.xib; sourceTree = "<group>"; };
 		943C322C20F90EBC1B26C217 /* Pods-icaew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaew.release.xcconfig"; path = "Pods/Target Support Files/Pods-icaew/Pods-icaew.release.xcconfig"; sourceTree = "<group>"; };
 		A4D129A2C174A04503AF7979 /* Pods_icaew.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_icaew.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA817776282BCDE5738959CB /* Pods_icaewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_icaewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +121,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		938E08591D2677CA00CAAFDA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				938E085A1D2677CA00CAAFDA /* Programmes */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		938E085A1D2677CA00CAAFDA /* Programmes */ = {
+			isa = PBXGroup;
+			children = (
+				938E085B1D2677E200CAAFDA /* ProgrammesTableViewCell.swift */,
+				938E085C1D2677E200CAAFDA /* ProgrammesTableViewCell.xib */,
+			);
+			path = Programmes;
+			sourceTree = "<group>";
+		};
 		A336AB3013CFEB4530944BBC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +190,7 @@
 				DA00A4811D23A9E900CDEA7B /* Controllers */,
 				DA00A4871D23A9E900CDEA7B /* ExtraLibraries */,
 				DA00A4881D23A9E900CDEA7B /* Models */,
+				938E08591D2677CA00CAAFDA /* Views */,
 				DA00A4891D23A9E900CDEA7B /* Resources */,
 				DA00A44C1D237BEA00CDEA7B /* AppDelegate.swift */,
 				DA00A4571D237BEA00CDEA7B /* LaunchScreen.storyboard */,
@@ -403,6 +425,7 @@
 				DA00A4971D23BA8600CDEA7B /* ProgrammesViewController.xib in Resources */,
 				DA00A4591D237BEA00CDEA7B /* LaunchScreen.storyboard in Resources */,
 				DA00A4A71D23BB4500CDEA7B /* ContactCountryListViewController.xib in Resources */,
+				938E085E1D2677E200CAAFDA /* ProgrammesTableViewCell.xib in Resources */,
 				DA00A48F1D23A9E900CDEA7B /* Assets.xcassets in Resources */,
 				DA00A4A31D23BB2700CDEA7B /* AboutViewController.xib in Resources */,
 				DA00A49F1D23BB1300CDEA7B /* UniversityCountryListViewController.xib in Resources */,
@@ -565,6 +588,7 @@
 				DA00A4931D23BA6300CDEA7B /* BaseViewController.swift in Sources */,
 				DA00A48E1D23A9E900CDEA7B /* UIKitHelper.swift in Sources */,
 				DA00A49E1D23BB1300CDEA7B /* UniversityCountryListViewController.swift in Sources */,
+				938E085D1D2677E200CAAFDA /* ProgrammesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

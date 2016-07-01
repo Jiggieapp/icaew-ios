@@ -11,6 +11,7 @@ target 'icaew' do
     pod 'SwiftHEXColors', '~> 1.0'
     pod 'UIAlertControllerExtension', '~> 1.1'
     pod 'SVProgressHUD', '~> 2.0'
+    pod 'SDWebImage', '~> 3.8'
 
   target 'icaewTests' do
     inherit! :search_paths
