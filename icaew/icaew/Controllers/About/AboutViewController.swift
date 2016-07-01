@@ -9,8 +9,9 @@
 import UIKit
 import Alamofire
 import SDWebImage
+import Mantle
 
-class AboutViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
+class AboutViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, MTLJSONSerializing {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -41,6 +42,7 @@ class AboutViewController: BaseViewController, UITableViewDataSource, UITableVie
                     
                     if let jsonDict = jsonResult as? [String : AnyObject] {
                         if let data = jsonDict["data"] as? [String : AnyObject] {
+                            let aboutData = MTLJSON
                             self.aboutDict = data
                             self.tableView.reloadData()
                         }

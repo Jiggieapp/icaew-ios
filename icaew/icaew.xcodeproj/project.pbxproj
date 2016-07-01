@@ -31,6 +31,7 @@
 		DA00A4A31D23BB2700CDEA7B /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA00A4A11D23BB2700CDEA7B /* AboutViewController.xib */; };
 		DA00A4A61D23BB4500CDEA7B /* ContactCountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA00A4A41D23BB4500CDEA7B /* ContactCountryListViewController.swift */; };
 		DA00A4A71D23BB4500CDEA7B /* ContactCountryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA00A4A51D23BB4500CDEA7B /* ContactCountryListViewController.xib */; };
+		DA5091C31D26682C00EE492A /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5091C21D26682C00EE492A /* About.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		DA00A4A41D23BB4500CDEA7B /* ContactCountryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCountryListViewController.swift; sourceTree = "<group>"; };
 		DA00A4A51D23BB4500CDEA7B /* ContactCountryListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactCountryListViewController.xib; sourceTree = "<group>"; };
 		DA5091BF1D26497D00EE492A /* icaew-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "icaew-Bridging-Header.h"; sourceTree = "<group>"; };
+		DA5091C21D26682C00EE492A /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		DF3D20665CF70BA7270597B9 /* Pods-icaewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-icaewTests/Pods-icaewTests.release.xcconfig"; sourceTree = "<group>"; };
 		ECDFA172AD05F163FD57425C /* Pods-icaewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaewUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-icaewUITests/Pods-icaewUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -277,6 +279,7 @@
 		DA00A4881D23A9E900CDEA7B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DA5091C21D26682C00EE492A /* About.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				DA00A48B1D23A9E900CDEA7B /* APIHelper.swift in Sources */,
 				DA00A4A21D23BB2700CDEA7B /* AboutViewController.swift in Sources */,
 				DA00A4921D23BA6300CDEA7B /* BaseTabBarController.swift in Sources */,
+				DA5091C31D26682C00EE492A /* About.swift in Sources */,
 				DA00A4A61D23BB4500CDEA7B /* ContactCountryListViewController.swift in Sources */,
 				DA00A44D1D237BEA00CDEA7B /* AppDelegate.swift in Sources */,
 				DA00A48D1D23A9E900CDEA7B /* NetworkHelper.swift in Sources */,
