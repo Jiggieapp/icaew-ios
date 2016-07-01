@@ -3,6 +3,7 @@
 
 target 'icaew' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
+  platform :ios, '8.0'
   use_frameworks!
 
   # Pods for icaew
@@ -11,6 +12,8 @@ target 'icaew' do
     pod 'SwiftHEXColors', '~> 1.0'
     pod 'UIAlertControllerExtension', '~> 1.1'
     pod 'SVProgressHUD', '~> 2.0'
+    pod 'SDWebImage', '~>3.8'
+    pod 'Mantle', '~>2.0'
 
   target 'icaewTests' do
     inherit! :search_paths
