@@ -91,8 +91,8 @@ class BaseViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
     }
     
-    func hideNavigationBar() {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    func hideNavigationBar(animated animated: Bool = false) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
         
         self.edgesForExtendedLayout = .None
     }

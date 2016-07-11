@@ -32,4 +32,5 @@ public enum APIResult<Value> {
 /// API endpoint constants.
 public struct APIEndpoint {
     
+    static let Programme = "program/"
 }

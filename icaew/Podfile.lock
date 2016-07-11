@@ -10,6 +10,7 @@ PODS:
   - SwiftHEXColors (1.0.4)
   - SwiftyUserDefaults (2.2.0)
   - UIAlertControllerExtension (1.1)
+  - youtube-ios-player-helper (0.1.6)
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - SwiftHEXColors (~> 1.0)
   - SwiftyUserDefaults (~> 2.2)
   - UIAlertControllerExtension (~> 1.1)
+  - youtube-ios-player-helper (~> 0.1)
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
@@ -28,7 +30,8 @@ SPEC CHECKSUMS:
   SwiftHEXColors: b0ecc7bd83a1aa2e1956f9ba51f55ebb2bcf86ef
   SwiftyUserDefaults: e7c8197a9d4068702e7f2406a968cae413b8de27
   UIAlertControllerExtension: d3aaf48590f182096b8bb81997ae54f24ccc07ab
+  youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: fa8b2cd0a5e48dbbe82145dc1f7d7b157ad8a6de
+PODFILE CHECKSUM: d72a17c2af64736a8f6be18c01c4b142c961dddf
 
 COCOAPODS: 1.0.1
