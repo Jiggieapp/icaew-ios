@@ -12,6 +12,7 @@
 		5496979489430A3C4BF4B90F /* Pods_icaewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA817776282BCDE5738959CB /* Pods_icaewTests.framework */; };
 		938E085D1D2677E200CAAFDA /* ProgrammesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E085B1D2677E200CAAFDA /* ProgrammesTableViewCell.swift */; };
 		938E085E1D2677E200CAAFDA /* ProgrammesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 938E085C1D2677E200CAAFDA /* ProgrammesTableViewCell.xib */; };
+		938E08611D335D9A00CAAFDA /* Programme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E08601D335D9A00CAAFDA /* Programme.swift */; };
 		DA00A44D1D237BEA00CDEA7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA00A44C1D237BEA00CDEA7B /* AppDelegate.swift */; };
 		DA00A4591D237BEA00CDEA7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA00A4571D237BEA00CDEA7B /* LaunchScreen.storyboard */; };
 		DA00A4641D237BEA00CDEA7B /* icaewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA00A4631D237BEA00CDEA7B /* icaewTests.swift */; };
@@ -59,6 +60,7 @@
 		780F19071E0500EBF17C24BF /* Pods-icaewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaewUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-icaewUITests/Pods-icaewUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		938E085B1D2677E200CAAFDA /* ProgrammesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammesTableViewCell.swift; sourceTree = "<group>"; };
 		938E085C1D2677E200CAAFDA /* ProgrammesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgrammesTableViewCell.xib; sourceTree = "<group>"; };
+		938E08601D335D9A00CAAFDA /* Programme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Programme.swift; sourceTree = "<group>"; };
 		943C322C20F90EBC1B26C217 /* Pods-icaew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaew.release.xcconfig"; path = "Pods/Target Support Files/Pods-icaew/Pods-icaew.release.xcconfig"; sourceTree = "<group>"; };
 		A4D129A2C174A04503AF7979 /* Pods_icaew.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_icaew.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA817776282BCDE5738959CB /* Pods_icaewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_icaewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +140,14 @@
 			path = Programmes;
 			sourceTree = "<group>";
 		};
+		938E085F1D335D7B00CAAFDA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				938E08601D335D9A00CAAFDA /* Programme.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A336AB3013CFEB4530944BBC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,7 +199,7 @@
 				DA00A47C1D23A9E900CDEA7B /* Components */,
 				DA00A4811D23A9E900CDEA7B /* Controllers */,
 				DA00A4871D23A9E900CDEA7B /* ExtraLibraries */,
-				DA00A4881D23A9E900CDEA7B /* Models */,
+				938E085F1D335D7B00CAAFDA /* Models */,
 				938E08591D2677CA00CAAFDA /* Views */,
 				DA00A4891D23A9E900CDEA7B /* Resources */,
 				DA00A44C1D237BEA00CDEA7B /* AppDelegate.swift */,
@@ -292,13 +302,6 @@
 			children = (
 			);
 			path = ExtraLibraries;
-			sourceTree = "<group>";
-		};
-		DA00A4881D23A9E900CDEA7B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		DA00A4891D23A9E900CDEA7B /* Resources */ = {
@@ -704,6 +707,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				938E08611D335D9A00CAAFDA /* Programme.swift in Sources */,
 				DA00A48C1D23A9E900CDEA7B /* FoundationHelper.swift in Sources */,
 				DA00A48B1D23A9E900CDEA7B /* APIHelper.swift in Sources */,
 				DA00A4A21D23BB2700CDEA7B /* AboutViewController.swift in Sources */,
