@@ -16,6 +16,7 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
     @IBOutlet var tableView: UITableView!
     
     private var headerImageView = UIImageView(image: UIImage(named: "image-home")!)
+    private var items = [[String : String]]()
     
     
     override func viewDidLoad() {
@@ -23,11 +24,33 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
         
         self.setupNavigationBar(title: "ICAEW OFFICE INDONESIA")
         self.setupView()
+        self.loadData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Data
+    private func loadData() {
+        self.showHUD()
+        Contact.retrieveContactDetail(id: 1) { (result) in
+            switch result {
+            case .Success(let contact):
+                self.items.append(["address-icon" : "ICAEW "+contact.countryName+"*#*"+contact.address])
+                self.items.append(["phone-icon" : contact.phoneNumber])
+                self.items.append(["email-icon" : contact.emailAddress])
+                self.items.append(["facebook-icon" : contact.facebookAddress])
+                self.items.append(["website-icon" : contact.websiteAddress])
+                self.tableView.reloadData()
+                
+            case .Error(_):
+                break
+            }
+            
+            self.dismissHUD()
+        }
     }
     
     // MARK: View
@@ -49,7 +72,7 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.items.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -59,13 +82,21 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
             cell = UITableViewCell(style: .Subtitle, reuseIdentifier: kContactCellIdentifier)
         }
         
+        let item = self.items[indexPath.row]
+        
         cell.selectionStyle = .None
         cell.backgroundColor = UIColor.clearColor()
+        cell.imageView?.image = UIImage(named: item.keys.first!)
         
-        cell.imageView?.image = UIImage(named: "address-icon")
-        cell.textLabel?.text = "ICAEW Indonesia"
-        cell.detailTextLabel?.text = "Haehaehaehae"
-        cell.detailTextLabel?.textColor = UIColor.lightGrayColor()
+        if indexPath.row == 0 {
+            let text = item.values.first!.componentsSeparatedByString("*#*")
+            cell.textLabel?.text = "ICAEW "+text[0]
+            cell.detailTextLabel?.text = text[1]
+            cell.detailTextLabel?.textColor = UIColor.lightGrayColor()
+        } else {
+            cell.textLabel?.text = item.values.first!
+            cell.detailTextLabel?.text = nil
+        }
         
         
         return cell
