@@ -20,6 +20,10 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
     private var programmes: [Programme]?
     
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

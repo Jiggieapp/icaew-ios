@@ -44,13 +44,15 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="7bb-2a-CJX"/>
+                        <constraint firstAttribute="height" constant="60" id="7bb-2a-CJX">
+                            <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                        </constraint>
                         <constraint firstAttribute="bottom" secondItem="4CG-qG-dPr" secondAttribute="bottom" constant="7" id="9Zb-eM-O4z"/>
                         <constraint firstItem="sgR-af-etf" firstAttribute="leading" secondItem="4CG-qG-dPr" secondAttribute="trailing" constant="8" id="EMl-Kq-bZz"/>
                         <constraint firstItem="sgR-af-etf" firstAttribute="top" secondItem="f36-I6-uqp" secondAttribute="top" constant="8" id="RSr-TG-kfl"/>
                         <constraint firstAttribute="bottom" secondItem="sgR-af-etf" secondAttribute="bottom" constant="8" id="Wkg-Qq-Y00"/>
                         <constraint firstItem="4CG-qG-dPr" firstAttribute="leading" secondItem="f36-I6-uqp" secondAttribute="leading" constant="8" id="r7b-5K-Spw"/>
-                        <constraint firstItem="4CG-qG-dPr" firstAttribute="top" secondItem="f36-I6-uqp" secondAttribute="top" constant="8" id="uvN-Qo-Jtl"/>
+                        <constraint firstItem="4CG-qG-dPr" firstAttribute="top" secondItem="f36-I6-uqp" secondAttribute="top" constant="28" id="uvN-Qo-Jtl"/>
                     </constraints>
                     <variation key="default">
                         <mask key="subviews">

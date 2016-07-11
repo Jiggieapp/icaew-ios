@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.rootViewController = BaseTabBarController.defaultTabBarController()
             window.makeKeyAndVisible()
         }
+        
         return true
     }
 
