@@ -33,6 +33,8 @@
 		DA00A4A31D23BB2700CDEA7B /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA00A4A11D23BB2700CDEA7B /* AboutViewController.xib */; };
 		DA00A4A61D23BB4500CDEA7B /* ContactCountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA00A4A41D23BB4500CDEA7B /* ContactCountryListViewController.swift */; };
 		DA00A4A71D23BB4500CDEA7B /* ContactCountryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA00A4A51D23BB4500CDEA7B /* ContactCountryListViewController.xib */; };
+		DA0E07811D33861F00E5A29C /* DynamicTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0E077F1D33861F00E5A29C /* DynamicTextCell.swift */; };
+		DA0E07821D33861F00E5A29C /* DynamicTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA0E07801D33861F00E5A29C /* DynamicTextCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		DA00A4A11D23BB2700CDEA7B /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		DA00A4A41D23BB4500CDEA7B /* ContactCountryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCountryListViewController.swift; sourceTree = "<group>"; };
 		DA00A4A51D23BB4500CDEA7B /* ContactCountryListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactCountryListViewController.xib; sourceTree = "<group>"; };
+		DA0E077F1D33861F00E5A29C /* DynamicTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTextCell.swift; sourceTree = "<group>"; };
+		DA0E07801D33861F00E5A29C /* DynamicTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DynamicTextCell.xib; sourceTree = "<group>"; };
 		DF3D20665CF70BA7270597B9 /* Pods-icaewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-icaewTests/Pods-icaewTests.release.xcconfig"; sourceTree = "<group>"; };
 		ECDFA172AD05F163FD57425C /* Pods-icaewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaewUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-icaewUITests/Pods-icaewUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				938E085A1D2677CA00CAAFDA /* Programmes */,
+				DA0E077F1D33861F00E5A29C /* DynamicTextCell.swift */,
+				DA0E07801D33861F00E5A29C /* DynamicTextCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -434,6 +440,7 @@
 				DA00A4591D237BEA00CDEA7B /* LaunchScreen.storyboard in Resources */,
 				DA00A4A71D23BB4500CDEA7B /* ContactCountryListViewController.xib in Resources */,
 				938E085E1D2677E200CAAFDA /* ProgrammesTableViewCell.xib in Resources */,
+				DA0E07821D33861F00E5A29C /* DynamicTextCell.xib in Resources */,
 				DA00A48F1D23A9E900CDEA7B /* Assets.xcassets in Resources */,
 				DA00A4A31D23BB2700CDEA7B /* AboutViewController.xib in Resources */,
 				DA00A49F1D23BB1300CDEA7B /* UniversityCountryListViewController.xib in Resources */,
@@ -706,6 +713,7 @@
 			files = (
 				DA00A48C1D23A9E900CDEA7B /* FoundationHelper.swift in Sources */,
 				DA00A48B1D23A9E900CDEA7B /* APIHelper.swift in Sources */,
+				DA0E07811D33861F00E5A29C /* DynamicTextCell.swift in Sources */,
 				DA00A4A21D23BB2700CDEA7B /* AboutViewController.swift in Sources */,
 				DA00A4921D23BA6300CDEA7B /* BaseTabBarController.swift in Sources */,
 				DA00A4A61D23BB4500CDEA7B /* ContactCountryListViewController.swift in Sources */,
