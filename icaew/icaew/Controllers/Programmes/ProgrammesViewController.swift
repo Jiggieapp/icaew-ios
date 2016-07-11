@@ -15,8 +15,9 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
 
     @IBOutlet var tableView: UITableView!
     
-    private var headerImageView: UIImageView?
+    private var headerImageView = UIImageView(image: UIImage(named: "image-home")!)
     private var headerView: UIView!
+    private var programmes: [Programme]?
     
     
     override func viewDidLoad() {
@@ -24,7 +25,7 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
         
         self.hideNavigationBar()
         self.setupView()
-        
+        self.loadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,19 +33,32 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: Data
+    private func loadData() {
+        self.showHUD()
+        Programme.retrieveProgrammes { (result) in
+            switch result {
+            case .Success(let programmes):
+                self.programmes = programmes
+                self.tableView.reloadData()
+                
+            case .Error(_):
+                break
+            }
+            
+            self.dismissHUD()
+        }
+    }
+    
     // MARK: View
     private func setupView() {
+        self.headerImageView.frame = CGRectMake(0, 0, UIScreen.width(), kTableHeaderViewHeight)
+        self.headerImageView.contentMode = .ScaleAspectFill
+        self.headerImageView.clipsToBounds = true
+        
         self.headerView = UIView(frame: CGRectMake(0, 0, UIScreen.width(), kTableHeaderViewHeight))
-        self.headerImageView = UIImageView(image: UIImage(named: "image-home")!)
-        
-        if let headerImageView = self.headerImageView {
-            self.headerView.addSubview(headerImageView)
-            
-            headerImageView.contentMode = .ScaleAspectFill
-            headerImageView.clipsToBounds = true
-            self.headerView.clipsToBounds = true
-        }
-        
+        self.headerView.addSubview(headerImageView)
+
         self.tableView.tableHeaderView = self.headerView
         self.tableView.tableFooterView = UIView()
         self.tableView.registerNib(ProgrammesTableViewCell.nib(),
@@ -53,7 +67,11 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
     
     // MARK: UITableViewDataSource
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        guard let programmes = self.programmes else {
+            return 0
+        }
+        
+        return programmes.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,6 +80,29 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(kProgrammesCellIdentifier) as! ProgrammesTableViewCell
+        cell.selectionStyle = .None
+        
+        if let programmes = self.programmes {
+            let programme = programmes[indexPath.section]
+            cell.initialLabel.text = programme.initial
+            cell.titleLabel.text = programme.title
+            
+            var detail = programme.detail
+            detail += "<style>body{font-family: '\(cell.detailLabel.font.fontName)'; font-size: \(cell.detailLabel.font.pointSize)px; color: #404852;}</style>"
+            
+            if let htmlData = description.dataUsingEncoding(NSUnicodeStringEncoding) {
+                do {
+                    let attributedText = try NSAttributedString(data: htmlData, options: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute : NSUTF8StringEncoding], documentAttributes: nil)
+                    cell.detailLabel.attributedText = attributedText
+                    cell.detailLabel.text = nil
+                } catch let error {
+                    print("Couldn't translate \(description): \(error) ")
+                }
+            } else {
+                cell.detailLabel.text = detail
+                cell.detailLabel.attributedText = nil
+            }
+        }
         
         return cell
     }
@@ -89,19 +130,13 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
     
     // MARK: UIScrollViewDelegate
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        if self.headerView.clipsToBounds {
-            self.headerView.clipsToBounds = false
-        }
+        let yPos = -scrollView.contentOffset.y
         
-        if let headerImageView = self.headerImageView {
-            let yPos = -scrollView.contentOffset.y
-            
-            if yPos > 0 {
-                var imageViewFrame = headerImageView.frame
-                imageViewFrame.origin.y = scrollView.contentOffset.y
-                imageViewFrame.size.height = kTableHeaderViewHeight+yPos
-                headerImageView.frame = imageViewFrame
-            }
+        if yPos > 0 {
+            var imageViewFrame = self.headerImageView.frame
+            imageViewFrame.origin.y = scrollView.contentOffset.y
+            imageViewFrame.size.height = kTableHeaderViewHeight+yPos
+            self.headerImageView.frame = imageViewFrame
         }
     }
 
