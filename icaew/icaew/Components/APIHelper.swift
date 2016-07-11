@@ -26,4 +26,5 @@ public enum APIResult<Value> {
 public struct APIEndpoint {
     
     static let Programme = "program/"
+    static let Contact = "contact/"
 }

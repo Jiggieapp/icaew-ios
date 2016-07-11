@@ -9,6 +9,8 @@
 import UIKit
 import Mantle
 
+typealias ContactDetailCompletionHandler = (result: APIResult<Contact>) -> Void
+
 class Contact: MTLModel, MTLJSONSerializing {
 
     private(set) var id = 0
@@ -29,4 +31,31 @@ class Contact: MTLModel, MTLJSONSerializing {
                 "websiteAddress" : "website"]
     }
     
+    static func retrieveContactDetail(id id: Int, completionHandler: ContactDetailCompletionHandler) {
+        if let request = NetworkManager.request(.GET, APIEndpoint.Contact+"\(id)") {
+            request.responseJSON(completionHandler: { (response) in
+                let result: APIResult<Contact>!
+                switch response.result {
+                case .Success(let json):
+                    do {
+                        guard let data = json["data"] as? [String : AnyObject] else {
+                            result = .Error(NSError.errorWithJSON(json))
+                            break
+                        }
+                        
+                        let contact = try MTLJSONAdapter.modelOfClass(Contact.self, fromJSONDictionary: data) as! Contact
+                        
+                        result = .Success(contact)
+                    } catch (let error) {
+                        result = .Error(error as NSError)
+                    }
+                    
+                case .Failure(let error):
+                    result = .Error(error)
+                }
+                
+                completionHandler(result: result)
+            })
+        }
+    }
 }
