@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactDetailViewController" customModule="icaew" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="LAy-Pk-Qda" id="m8j-hO-Aji"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LAy-Pk-Qda">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="cbT-S7-O9F"/>
+                        <outlet property="delegate" destination="-1" id="tBe-DU-X7o"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="LAy-Pk-Qda" secondAttribute="bottom" id="Bxm-ug-njt"/>
+                <constraint firstItem="LAy-Pk-Qda" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OJP-T0-LXk"/>
+                <constraint firstItem="LAy-Pk-Qda" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eDS-6A-y0W"/>
+                <constraint firstAttribute="trailing" secondItem="LAy-Pk-Qda" secondAttribute="trailing" id="xhD-BH-5JS"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="LAy-Pk-Qda"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="Bxm-ug-njt"/>
+                    <exclude reference="OJP-T0-LXk"/>
+                    <exclude reference="eDS-6A-y0W"/>
+                    <exclude reference="xhD-BH-5JS"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="LAy-Pk-Qda"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="Bxm-ug-njt"/>
+                    <include reference="OJP-T0-LXk"/>
+                    <include reference="eDS-6A-y0W"/>
+                    <include reference="xhD-BH-5JS"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>
