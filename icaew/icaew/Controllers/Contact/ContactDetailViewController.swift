@@ -8,6 +8,7 @@
 
 import UIKit
 
+private let kContactCellIdentifier = "kContactCellIdentifier"
 private let kTableHeaderViewHeight: CGFloat = 213
 
 class ContactDetailViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
@@ -20,7 +21,8 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupNavigationBar(title: "")
+        self.setupNavigationBar(title: "ICAEW OFFICE INDONESIA")
+        self.setupView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,17 +49,32 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        var cell = tableView.dequeueReusableCellWithIdentifier(kContactCellIdentifier) as UITableViewCell!
+        
+        if cell == nil {
+            cell = UITableViewCell(style: .Subtitle, reuseIdentifier: kContactCellIdentifier)
+        }
+        
+        cell.selectionStyle = .None
+        cell.backgroundColor = UIColor.clearColor()
+        
+        cell.imageView?.image = UIImage(named: "address-icon")
+        cell.textLabel?.text = "ICAEW Indonesia"
+        cell.detailTextLabel?.text = "Haehaehaehae"
+        cell.detailTextLabel?.textColor = UIColor.lightGrayColor()
+        
+        
+        return cell
     }
     
     // MARK: UITableViewDelegate
-//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        return
-//    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 50
+    }
     
     // MARK: UIScrollViewDelegate
     func scrollViewDidScroll(scrollView: UIScrollView) {
