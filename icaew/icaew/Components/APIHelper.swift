@@ -8,13 +8,6 @@
 
 import Foundation
 
-/// Custom enum used to handling response status from API.
-public enum APIStatus : String {
-    case Success = "success"
-    case Error = "error"
-}
-
-
 /**
  Used to represent whether a request was successful or encountered an error.
  
