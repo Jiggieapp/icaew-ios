@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import youtube_ios_player_helper
 
 class ProgrammeDetailViewController: BaseViewController {
 
     @IBOutlet var detailLabel: UILabel!
+    @IBOutlet var playerView: YTPlayerView!
+    
     private var programme: Programme!
+    
     
     convenience init(programme: Programme) {
         self.init(nibName: "ProgrammeDetailViewController", bundle: nil)
@@ -36,6 +40,9 @@ class ProgrammeDetailViewController: BaseViewController {
         } else {
             self.detailLabel.text = self.programme.detail
         }
+        
+        let videoId = self.programme.youtubeURL.componentsSeparatedByString("watch?v=").last!
+        self.playerView.loadWithVideoId(videoId)
     }
 
     override func didReceiveMemoryWarning() {
