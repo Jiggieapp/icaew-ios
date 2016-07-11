@@ -16,7 +16,6 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
     @IBOutlet var tableView: UITableView!
     
     private var headerImageView = UIImageView(image: UIImage(named: "image-home")!)
-    private var headerView: UIView!
     private var programmes: [Programme]?
     
     
@@ -65,10 +64,10 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
         self.headerImageView.contentMode = .ScaleAspectFill
         self.headerImageView.clipsToBounds = true
         
-        self.headerView = UIView(frame: CGRectMake(0, 0, UIScreen.width(), kTableHeaderViewHeight))
-        self.headerView.addSubview(headerImageView)
+        let headerView = UIView(frame: CGRectMake(0, 0, UIScreen.width(), kTableHeaderViewHeight))
+        headerView.addSubview(headerImageView)
 
-        self.tableView.tableHeaderView = self.headerView
+        self.tableView.tableHeaderView = headerView
         self.tableView.tableFooterView = UIView()
         self.tableView.registerNib(ProgrammesTableViewCell.nib(),
                                    forCellReuseIdentifier: kProgrammesCellIdentifier)
