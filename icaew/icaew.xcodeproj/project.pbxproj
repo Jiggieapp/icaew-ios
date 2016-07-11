@@ -10,6 +10,8 @@
 		11C95B58935B7C084479B273 /* Pods_icaew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D129A2C174A04503AF7979 /* Pods_icaew.framework */; };
 		2F7725DBC113C4FF81153D28 /* Pods_icaewUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730C4341F42939BE9B069F39 /* Pods_icaewUITests.framework */; };
 		5496979489430A3C4BF4B90F /* Pods_icaewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA817776282BCDE5738959CB /* Pods_icaewTests.framework */; };
+		9312D0981D33872300B00E8C /* ProgrammeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312D0961D33872300B00E8C /* ProgrammeDetailViewController.swift */; };
+		9312D0991D33872300B00E8C /* ProgrammeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9312D0971D33872300B00E8C /* ProgrammeDetailViewController.xib */; };
 		938E085D1D2677E200CAAFDA /* ProgrammesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E085B1D2677E200CAAFDA /* ProgrammesTableViewCell.swift */; };
 		938E085E1D2677E200CAAFDA /* ProgrammesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 938E085C1D2677E200CAAFDA /* ProgrammesTableViewCell.xib */; };
 		938E08611D335D9A00CAAFDA /* Programme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E08601D335D9A00CAAFDA /* Programme.swift */; };
@@ -58,6 +60,8 @@
 		2FF94DF2B21FEBA56FDBBBB7 /* Pods-icaewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-icaewTests/Pods-icaewTests.debug.xcconfig"; sourceTree = "<group>"; };
 		730C4341F42939BE9B069F39 /* Pods_icaewUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_icaewUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		780F19071E0500EBF17C24BF /* Pods-icaewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaewUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-icaewUITests/Pods-icaewUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9312D0961D33872300B00E8C /* ProgrammeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammeDetailViewController.swift; sourceTree = "<group>"; };
+		9312D0971D33872300B00E8C /* ProgrammeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgrammeDetailViewController.xib; sourceTree = "<group>"; };
 		938E085B1D2677E200CAAFDA /* ProgrammesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammesTableViewCell.swift; sourceTree = "<group>"; };
 		938E085C1D2677E200CAAFDA /* ProgrammesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgrammesTableViewCell.xib; sourceTree = "<group>"; };
 		938E08601D335D9A00CAAFDA /* Programme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Programme.swift; sourceTree = "<group>"; };
@@ -284,6 +288,8 @@
 			children = (
 				DA00A4941D23BA8600CDEA7B /* ProgrammesViewController.swift */,
 				DA00A4951D23BA8600CDEA7B /* ProgrammesViewController.xib */,
+				9312D0961D33872300B00E8C /* ProgrammeDetailViewController.swift */,
+				9312D0971D33872300B00E8C /* ProgrammeDetailViewController.xib */,
 			);
 			path = Programmes;
 			sourceTree = "<group>";
@@ -435,6 +441,7 @@
 				DA00A49B1D23BAF400CDEA7B /* EventCountryListViewController.xib in Resources */,
 				DA00A4971D23BA8600CDEA7B /* ProgrammesViewController.xib in Resources */,
 				DA00A4591D237BEA00CDEA7B /* LaunchScreen.storyboard in Resources */,
+				9312D0991D33872300B00E8C /* ProgrammeDetailViewController.xib in Resources */,
 				DA00A4A71D23BB4500CDEA7B /* ContactCountryListViewController.xib in Resources */,
 				938E085E1D2677E200CAAFDA /* ProgrammesTableViewCell.xib in Resources */,
 				DA00A48F1D23A9E900CDEA7B /* Assets.xcassets in Resources */,
@@ -721,6 +728,7 @@
 				DA00A48E1D23A9E900CDEA7B /* UIKitHelper.swift in Sources */,
 				DA00A49E1D23BB1300CDEA7B /* UniversityCountryListViewController.swift in Sources */,
 				938E085D1D2677E200CAAFDA /* ProgrammesTableViewCell.swift in Sources */,
+				9312D0981D33872300B00E8C /* ProgrammeDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

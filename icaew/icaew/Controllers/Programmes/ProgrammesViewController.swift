@@ -23,9 +23,14 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.hideNavigationBar()
         self.setupView()
         self.loadData()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.hideNavigationBar(animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,23 +89,23 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
         
         if let programmes = self.programmes {
             let programme = programmes[indexPath.section]
-            cell.initialLabel.text = programme.initial
-            cell.titleLabel.text = programme.title
+            cell.initialLabel.text = programme.initial.uppercaseString
+            cell.titleLabel.text = programme.title.capitalizedString
             
             var detail = programme.detail
-            detail += "<style>body{font-family: '\(cell.detailLabel.font.fontName)'; font-size: \(cell.detailLabel.font.pointSize)px; color: #404852;}</style>"
+            detail += "<style>body{font-family: '\(cell.detailLabel.font.fontName)'; font-size: \(cell.detailLabel.font.pointSize)px; color: #AAAAAA;}</style>"
             
             if let htmlData = description.dataUsingEncoding(NSUnicodeStringEncoding) {
                 do {
                     let attributedText = try NSAttributedString(data: htmlData, options: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute : NSUTF8StringEncoding], documentAttributes: nil)
-                    cell.detailLabel.attributedText = attributedText
                     cell.detailLabel.text = nil
+                    cell.detailLabel.attributedText = attributedText
                 } catch let error {
                     print("Couldn't translate \(description): \(error) ")
                 }
             } else {
-                cell.detailLabel.text = detail
                 cell.detailLabel.attributedText = nil
+                cell.detailLabel.text = programme.detail
             }
         }
         
@@ -126,6 +131,13 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if let programmes = self.programmes {
+            let programme = programmes[indexPath.section]
+            
+            self.removeBackButtonTitle()
+            self.navigationController?.pushViewController(ProgrammeDetailViewController(programme: programme), animated: true)
+        }
     }
     
     // MARK: UIScrollViewDelegate
