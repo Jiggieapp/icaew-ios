@@ -1,14 +1,14 @@
 //
-//  EventCountryListViewController.swift
+//  UniversityDetailViewController.swift
 //  icaew
 //
-//  Created by Setiady Wiguna on 6/29/16.
+//  Created by Setiady Wiguna on 7/12/16.
 //  Copyright © 2016 Jiggie. All rights reserved.
 //
 
 import UIKit
 
-class EventCountryListViewController: BaseViewController {
+class UniversityDetailViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
