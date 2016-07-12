@@ -47,9 +47,6 @@ class CountryViewController: BaseViewController {
             
         case .university:
             self.setupNavigationBar(title: "ICAEW PARTNER UNIVERSITY")
-            
-        default:
-            break
         }
         
         self.collectionView.registerNib(CountryCell.nib(),
@@ -106,7 +103,6 @@ class CountryViewController: BaseViewController {
     }
     
     // MARK: - UICollectionViewDelegate protocol
-    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")

@@ -27,5 +27,6 @@ public struct APIEndpoint {
     
     static let Programme = "program/"
     static let Country = "country/"
+    static let Events = "event/"
     static let Contact = "contact/"
 }
