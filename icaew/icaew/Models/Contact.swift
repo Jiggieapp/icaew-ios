@@ -14,6 +14,7 @@ typealias ContactDetailCompletionHandler = (result: APIResult<Contact>) -> Void
 class Contact: MTLModel, MTLJSONSerializing {
 
     private(set) var id = 0
+    private(set) var imageURL = ""
     private(set) var countryName = ""
     private(set) var address = ""
     private(set) var phoneNumber = ""
@@ -23,6 +24,7 @@ class Contact: MTLModel, MTLJSONSerializing {
     
     static func JSONKeyPathsByPropertyKey() -> [NSObject : AnyObject]! {
         return ["id" : "id",
+                "imageURL" : "image",
                 "countryName" : "country_name",
                 "address" : "address",
                 "phoneNumber" : "telp",
