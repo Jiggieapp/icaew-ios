@@ -90,7 +90,7 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
         
         if indexPath.row == 0 {
             let text = item.values.first!.componentsSeparatedByString("*#*")
-            cell.textLabel?.text = "ICAEW "+text[0]
+            cell.textLabel?.text = text[0]
             cell.detailTextLabel?.text = text[1]
             cell.detailTextLabel?.textColor = UIColor.lightGrayColor()
         } else {
@@ -98,13 +98,20 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
             cell.detailTextLabel?.text = nil
         }
         
-        
         return cell
     }
     
     // MARK: UITableViewDelegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 50
+        if indexPath.row == 0 {
+            let item = self.items[indexPath.row]
+            let text = item.values.first!.componentsSeparatedByString("*#*")
+            
+            return 30 + text[1].getTextHeight(CGRectGetWidth(tableView.bounds) - 135,
+                                              font: UIFont.systemFontOfSize(15))
+        }
+        
+        return 40
     }
     
     // MARK: UIScrollViewDelegate
