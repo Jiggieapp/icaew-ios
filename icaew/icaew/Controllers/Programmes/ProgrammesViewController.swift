@@ -96,7 +96,7 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
             cell.titleLabel.text = programme.title.uppercaseString
             
             var detail = programme.detail
-            detail += "<style>body{font-family: '\(cell.detailLabel.font.fontName)'; font-size: \(cell.detailLabel.font.pointSize)px; color: #AAAAAA;}</style>"
+            detail += "<style>body{font-family: '\(cell.detailLabel.font.fontName)'; font-size: \(cell.detailLabel.font.pointSize)px; color: #787878;}</style>"
             
             if let htmlData = detail.dataUsingEncoding(NSUnicodeStringEncoding) {
                 do {
