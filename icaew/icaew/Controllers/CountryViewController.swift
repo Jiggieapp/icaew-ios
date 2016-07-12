@@ -8,18 +8,24 @@
 
 import UIKit
 
-enum CountrySource: Int {
-    case contact = 0
-    case event = 1
-    case university = 2
+enum CountrySource {
+    case contact
+    case event
+    case university
 }
 
-class CountryViewController: UIViewController {
+class CountryViewController: BaseViewController {
     
-    var countrySource: CountrySource
+    @IBOutlet weak var collectionView: UICollectionView!
     
-    override func initWithSource(countrySource: CountrySource) {
-        self.initNIB 
+    private var countrySource: CountrySource!
+    private var countries: [Country]?
+    
+    private let kCountryListCellIdentifier = "CountryListCell"
+    
+    convenience init(countrySource: CountrySource) {
+        self.init(nibName: "CountryViewController", bundle: nil)
+        self.countrySource = countrySource
     }
     
     override func viewDidLoad() {
@@ -27,31 +33,83 @@ class CountryViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.setupView()
+        self.loadData()
     }
     
     func setupView() {
-        switch countrySource {
+        
+        switch self.countrySource! {
         case .contact:
+            self.setupNavigationBar(title: "ICAEW OFFICES IN SOUTH EAST ASIA")
+    
+        case .event:
+            self.setupNavigationBar(title: "ICAEW EVENTS")
+            
+        case .university:
+            self.setupNavigationBar(title: "ICAEW PARTNER UNIVERSITY")
             
         default:
-            <#code#>
+            break
+        }
+        
+        self.collectionView.registerNib(CountryCell.nib(),
+                                        forCellWithReuseIdentifier: kCountryListCellIdentifier)
+    }
+    
+    // MARK: Data
+    private func loadData() {
+        self.showHUD()
+        Country.retrieveCountries{(result) in
+            switch result {
+            case .Success(let countries):
+                self.countries = countries
+                self.collectionView.reloadData()
+                
+            case .Error(_):
+                break
+            }
+            
+            self.dismissHUD()
         }
     }
-        
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - UICollectionViewDataSource protocol
+    
+    // tell the collection view how many cells to make
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let countries = self.countries else {
+            return 0
+        }
+        
+        return countries.count
     }
-    */
+    
+    // make a cell for each cell index path
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        // get a reference to our storyboard cell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kCountryListCellIdentifier, forIndexPath: indexPath) as! CountryCell
+        
+        if let countries = self.countries {
+            let country = countries[indexPath.row]
+            
+            cell.countryName.text = country.name
+            cell.countryImage.sd_setImageWithURL(NSURL(string: country.imageURL))
+        }
+        
+        return cell
+    }
+    
+    // MARK: - UICollectionViewDelegate protocol
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        // handle tap events
+        print("You selected cell #\(indexPath.item)!")
+    }
 
 }

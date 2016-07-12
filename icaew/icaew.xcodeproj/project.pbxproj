@@ -40,6 +40,9 @@
 		DA0E07821D33861F00E5A29C /* DynamicTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA0E07801D33861F00E5A29C /* DynamicTextCell.xib */; };
 		DA0E07851D33A35100E5A29C /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0E07831D33A35100E5A29C /* CountryViewController.swift */; };
 		DA0E07861D33A35100E5A29C /* CountryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA0E07841D33A35100E5A29C /* CountryViewController.xib */; };
+		DA1D18591D34D5B6002386E0 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D18581D34D5B6002386E0 /* Country.swift */; };
+		DA1D185C1D34DDEE002386E0 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D185A1D34DDEE002386E0 /* CountryCell.swift */; };
+		DA1D185D1D34DDEE002386E0 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA1D185B1D34DDEE002386E0 /* CountryCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +106,9 @@
 		DA0E07801D33861F00E5A29C /* DynamicTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DynamicTextCell.xib; sourceTree = "<group>"; };
 		DA0E07831D33A35100E5A29C /* CountryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
 		DA0E07841D33A35100E5A29C /* CountryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryViewController.xib; sourceTree = "<group>"; };
+		DA1D18581D34D5B6002386E0 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		DA1D185A1D34DDEE002386E0 /* CountryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
+		DA1D185B1D34DDEE002386E0 /* CountryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
 		DF3D20665CF70BA7270597B9 /* Pods-icaewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-icaewTests/Pods-icaewTests.release.xcconfig"; sourceTree = "<group>"; };
 		ECDFA172AD05F163FD57425C /* Pods-icaewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaewUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-icaewUITests/Pods-icaewUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +147,8 @@
 				938E085A1D2677CA00CAAFDA /* Programmes */,
 				DA0E077F1D33861F00E5A29C /* DynamicTextCell.swift */,
 				DA0E07801D33861F00E5A29C /* DynamicTextCell.xib */,
+				DA1D185A1D34DDEE002386E0 /* CountryCell.swift */,
+				DA1D185B1D34DDEE002386E0 /* CountryCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -158,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				938E08601D335D9A00CAAFDA /* Programme.swift */,
+				DA1D18581D34D5B6002386E0 /* Country.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -450,6 +459,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA1D185D1D34DDEE002386E0 /* CountryCell.xib in Resources */,
 				DA00A49B1D23BAF400CDEA7B /* EventCountryListViewController.xib in Resources */,
 				DA0E07861D33A35100E5A29C /* CountryViewController.xib in Resources */,
 				DA00A4971D23BA8600CDEA7B /* ProgrammesViewController.xib in Resources */,
@@ -738,6 +748,8 @@
 				DA00A4A61D23BB4500CDEA7B /* ContactCountryListViewController.swift in Sources */,
 				DA00A44D1D237BEA00CDEA7B /* AppDelegate.swift in Sources */,
 				DA00A48D1D23A9E900CDEA7B /* NetworkHelper.swift in Sources */,
+				DA1D18591D34D5B6002386E0 /* Country.swift in Sources */,
+				DA1D185C1D34DDEE002386E0 /* CountryCell.swift in Sources */,
 				DA00A49A1D23BAF400CDEA7B /* EventCountryListViewController.swift in Sources */,
 				DA00A4961D23BA8600CDEA7B /* ProgrammesViewController.swift in Sources */,
 				DA00A4931D23BA6300CDEA7B /* BaseViewController.swift in Sources */,

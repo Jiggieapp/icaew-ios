@@ -25,10 +25,10 @@ class BaseTabBarController: UITabBarController {
     
     static func defaultTabBarController(selected: Int? = 0) -> BaseTabBarController {
         let programmesNavigationController = UINavigationController(rootViewController: ProgrammesViewController())
-        let eventsNavigationController = UINavigationController(rootViewController: EventCountryListViewController())
-        let universityNavigationController = UINavigationController(rootViewController: UniversityCountryListViewController())
+        let eventsNavigationController = UINavigationController(rootViewController: CountryViewController( countrySource: CountrySource.event))
+        let universityNavigationController = UINavigationController(rootViewController: CountryViewController(countrySource: CountrySource.university))
         let aboutNavigationController = UINavigationController(rootViewController: AboutViewController())
-        let contactNavigationController = UINavigationController(rootViewController: ContactCountryListViewController())
+        let contactNavigationController = UINavigationController(rootViewController: CountryViewController(countrySource: CountrySource.contact))
         
         let tabBarController = BaseTabBarController()
         tabBarController.tabBar.translucent = false
