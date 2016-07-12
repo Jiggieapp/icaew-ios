@@ -12,7 +12,13 @@ class EventCountryListViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.setupNavigationBar(title: "ICAEW EVENTS")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         self.removeBackButtonTitle()
         self.navigationController?.pushViewController(EventListViewController(), animated: true)
     }

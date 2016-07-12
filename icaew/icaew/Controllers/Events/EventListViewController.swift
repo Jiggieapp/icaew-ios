@@ -14,10 +14,13 @@ class EventListViewController: BaseViewController, UITableViewDataSource, UITabl
 
     @IBOutlet var tableView: UITableView!
     
+    private var events: [Event]?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupNavigationBar(title: "EVENT IN "+"INDONESIA")
+        self.setupNavigationBar(title: "EVENTS IN "+"INDONESIA")
         
         self.setupView()
         self.loadData()
@@ -37,12 +40,25 @@ class EventListViewController: BaseViewController, UITableViewDataSource, UITabl
     
     // MARK: Data
     private func loadData() {
-        
+        Event.retrieveEvents(id: 1) { (result) in
+            switch result {
+            case .Success(let events):
+                self.events = events
+                self.tableView.reloadData()
+                
+            case .Error(_):
+                break
+            }
+        }
     }
     
     // MARK: UITableViewDataSource
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        guard let events = self.events else {
+            return 0
+        }
+        
+        return events.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,6 +70,37 @@ class EventListViewController: BaseViewController, UITableViewDataSource, UITabl
         cell.selectionStyle = .None
         
         cell.roundedView.backgroundColor = UIColor(hexString: "05D3BB")
+        
+        if let events = self.events {
+            let event = events[indexPath.row]
+            
+            let date = NSDate.dateFromString("yyyy-MM-dd HH:mm:ss", string: event.startDate)
+            
+            if let date = date,
+                stringDate = NSDate.stringFromDate(date, format: "MMM dd") {
+                let startDate = stringDate.stringByReplacingOccurrencesOfString(" ", withString: "\n")
+                cell.initialLabel.text = startDate
+            }
+            
+            cell.titleLabel.text = event.title
+            
+            
+            var detail = event.subtitle
+            detail += "<style>body{font-family: '\(cell.detailLabel.font.fontName)'; font-size: \(cell.detailLabel.font.pointSize)px; color: #787878;}</style>"
+            
+            if let htmlData = detail.dataUsingEncoding(NSUnicodeStringEncoding) {
+                do {
+                    let attributedText = try NSAttributedString(data: htmlData, options: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute : NSUTF8StringEncoding], documentAttributes: nil)
+                    cell.detailLabel.text = nil
+                    cell.detailLabel.attributedText = attributedText
+                } catch let error {
+                    print("Couldn't translate \(description): \(error) ")
+                }
+            } else {
+                cell.detailLabel.attributedText = nil
+                cell.detailLabel.text = event.subtitle
+            }
+        }
         
         return cell
     }
