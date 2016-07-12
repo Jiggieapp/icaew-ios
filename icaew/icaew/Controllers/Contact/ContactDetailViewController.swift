@@ -43,6 +43,8 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
                 self.items.append(["email-icon" : contact.emailAddress])
                 self.items.append(["facebook-icon" : contact.facebookAddress])
                 self.items.append(["website-icon" : contact.websiteAddress])
+                self.headerImageView.sd_setImageWithURL(NSURL(string: contact.imageURL),
+                                                        placeholderImage: UIImage(named: "image-home")!)
                 self.tableView.reloadData()
                 
             case .Error(_):
