@@ -93,12 +93,12 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
         if let programmes = self.programmes {
             let programme = programmes[indexPath.section]
             cell.initialLabel.text = programme.initial.uppercaseString
-            cell.titleLabel.text = programme.title.capitalizedString
+            cell.titleLabel.text = programme.title.uppercaseString
             
             var detail = programme.detail
             detail += "<style>body{font-family: '\(cell.detailLabel.font.fontName)'; font-size: \(cell.detailLabel.font.pointSize)px; color: #AAAAAA;}</style>"
             
-            if let htmlData = description.dataUsingEncoding(NSUnicodeStringEncoding) {
+            if let htmlData = detail.dataUsingEncoding(NSUnicodeStringEncoding) {
                 do {
                     let attributedText = try NSAttributedString(data: htmlData, options: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute : NSUTF8StringEncoding], documentAttributes: nil)
                     cell.detailLabel.text = nil
