@@ -93,6 +93,8 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
         if indexPath.row == 0 {
             let text = item.values.first!.componentsSeparatedByString("*#*")
             cell.textLabel?.text = text[0]
+            cell.detailTextLabel?.numberOfLines = 0
+            cell.detailTextLabel?.font = UIFont.systemFontOfSize(15)
             cell.detailTextLabel?.text = text[1]
             cell.detailTextLabel?.textColor = UIColor.lightGrayColor()
         } else {
@@ -109,7 +111,7 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
             let item = self.items[indexPath.row]
             let text = item.values.first!.componentsSeparatedByString("*#*")
             
-            return 30 + text[1].getTextHeight(CGRectGetWidth(tableView.bounds) - 135,
+            return 30 + text[1].getTextHeight(CGRectGetWidth(tableView.bounds) - 90,
                                               font: UIFont.systemFontOfSize(15))
         }
         

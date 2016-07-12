@@ -30,10 +30,10 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
         self.loadData()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
-        self.hideNavigationBar(animated: true)
+        self.hideNavigationBar()
     }
 
     override func didReceiveMemoryWarning() {

@@ -24,8 +24,6 @@ class ProgrammeDetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.setupNavigationBar(title: programme.title.uppercaseString)
         
         var detail = self.programme.detail
         detail += "<style>body{font-family: '\(self.detailLabel.font.fontName)'; font-size: \(self.detailLabel.font.pointSize)px; color: #000000;}</style>"
@@ -45,6 +43,12 @@ class ProgrammeDetailViewController: BaseViewController {
         
         let videoId = self.programme.youtubeURL.componentsSeparatedByString("watch?v=").last!
         self.playerView.loadWithVideoId(videoId)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.setupNavigationBar(title: programme.title.uppercaseString)
     }
 
     override func didReceiveMemoryWarning() {
