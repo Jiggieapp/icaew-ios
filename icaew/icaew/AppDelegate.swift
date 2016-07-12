@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         if let window = window {
-            window.backgroundColor = UIColor.whiteColor()
+            window.backgroundColor = UIColor.blackColor()
             window.rootViewController = BaseTabBarController.defaultTabBarController()
             window.makeKeyAndVisible()
         }

@@ -8,13 +8,6 @@
 
 import Foundation
 
-/// Custom enum used to handling response status from API.
-public enum APIStatus : String {
-    case Success = "success"
-    case Error = "error"
-}
-
-
 /**
  Used to represent whether a request was successful or encountered an error.
  
@@ -34,4 +27,5 @@ public struct APIEndpoint {
     
     static let Programme = "program/"
     static let Country = "country/"
+    static let Contact = "contact/"
 }

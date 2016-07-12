@@ -116,13 +116,21 @@ extension String {
     }
     
     /// Check whether given email address is valid or not.
-    func isValidEmailAddress(strict: Bool = false) -> Bool {
+    func isValidEmailAddress(strict strict: Bool = false) -> Bool {
         let stricterFilterString = "[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}"
         let laxString = ".+@([A-Za-z0-9]+\\.)+[A-Za-z]{2}[A-Za-z]*"
         let emailRegex = strict ? stricterFilterString : laxString
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
         
         return emailPredicate.evaluateWithObject(self)
+    }
+    
+    func getTextHeight(width: CGFloat, font: UIFont) -> CGFloat {
+        var size = CGSizeZero
+        let frame = (self as NSString).boundingRectWithSize(CGSizeMake(width, CGFloat.max), options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName : font], context: nil)
+        size = CGSizeMake(CGRectGetWidth(frame), CGRectGetHeight(frame))
+        
+        return round(size.height) + 1
     }
     
 }

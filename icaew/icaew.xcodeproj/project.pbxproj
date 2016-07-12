@@ -12,6 +12,9 @@
 		5496979489430A3C4BF4B90F /* Pods_icaewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA817776282BCDE5738959CB /* Pods_icaewTests.framework */; };
 		9312D0981D33872300B00E8C /* ProgrammeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312D0961D33872300B00E8C /* ProgrammeDetailViewController.swift */; };
 		9312D0991D33872300B00E8C /* ProgrammeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9312D0971D33872300B00E8C /* ProgrammeDetailViewController.xib */; };
+		9312D09C1D33A4D300B00E8C /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312D09A1D33A4D300B00E8C /* ContactDetailViewController.swift */; };
+		9312D09D1D33A4D300B00E8C /* ContactDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9312D09B1D33A4D300B00E8C /* ContactDetailViewController.xib */; };
+		9312D09F1D33AA4400B00E8C /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312D09E1D33AA4400B00E8C /* Contact.swift */; };
 		938E085D1D2677E200CAAFDA /* ProgrammesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E085B1D2677E200CAAFDA /* ProgrammesTableViewCell.swift */; };
 		938E085E1D2677E200CAAFDA /* ProgrammesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 938E085C1D2677E200CAAFDA /* ProgrammesTableViewCell.xib */; };
 		938E08611D335D9A00CAAFDA /* Programme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E08601D335D9A00CAAFDA /* Programme.swift */; };
@@ -69,6 +72,9 @@
 		780F19071E0500EBF17C24BF /* Pods-icaewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaewUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-icaewUITests/Pods-icaewUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9312D0961D33872300B00E8C /* ProgrammeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammeDetailViewController.swift; sourceTree = "<group>"; };
 		9312D0971D33872300B00E8C /* ProgrammeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgrammeDetailViewController.xib; sourceTree = "<group>"; };
+		9312D09A1D33A4D300B00E8C /* ContactDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
+		9312D09B1D33A4D300B00E8C /* ContactDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactDetailViewController.xib; sourceTree = "<group>"; };
+		9312D09E1D33AA4400B00E8C /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		938E085B1D2677E200CAAFDA /* ProgrammesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammesTableViewCell.swift; sourceTree = "<group>"; };
 		938E085C1D2677E200CAAFDA /* ProgrammesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgrammesTableViewCell.xib; sourceTree = "<group>"; };
 		938E08601D335D9A00CAAFDA /* Programme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Programme.swift; sourceTree = "<group>"; };
@@ -167,6 +173,7 @@
 			children = (
 				938E08601D335D9A00CAAFDA /* Programme.swift */,
 				DA1D18581D34D5B6002386E0 /* Country.swift */,
+				9312D09E1D33AA4400B00E8C /* Contact.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -291,6 +298,8 @@
 			children = (
 				DA00A4A41D23BB4500CDEA7B /* ContactCountryListViewController.swift */,
 				DA00A4A51D23BB4500CDEA7B /* ContactCountryListViewController.xib */,
+				9312D09A1D33A4D300B00E8C /* ContactDetailViewController.swift */,
+				9312D09B1D33A4D300B00E8C /* ContactDetailViewController.xib */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -464,6 +473,7 @@
 				DA0E07861D33A35100E5A29C /* CountryViewController.xib in Resources */,
 				DA00A4971D23BA8600CDEA7B /* ProgrammesViewController.xib in Resources */,
 				DA00A4591D237BEA00CDEA7B /* LaunchScreen.storyboard in Resources */,
+				9312D09D1D33A4D300B00E8C /* ContactDetailViewController.xib in Resources */,
 				9312D0991D33872300B00E8C /* ProgrammeDetailViewController.xib in Resources */,
 				DA00A4A71D23BB4500CDEA7B /* ContactCountryListViewController.xib in Resources */,
 				938E085E1D2677E200CAAFDA /* ProgrammesTableViewCell.xib in Resources */,
@@ -738,6 +748,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9312D09F1D33AA4400B00E8C /* Contact.swift in Sources */,
 				938E08611D335D9A00CAAFDA /* Programme.swift in Sources */,
 				DA00A48C1D23A9E900CDEA7B /* FoundationHelper.swift in Sources */,
 				DA00A48B1D23A9E900CDEA7B /* APIHelper.swift in Sources */,
@@ -754,6 +765,7 @@
 				DA00A4961D23BA8600CDEA7B /* ProgrammesViewController.swift in Sources */,
 				DA00A4931D23BA6300CDEA7B /* BaseViewController.swift in Sources */,
 				DA00A48E1D23A9E900CDEA7B /* UIKitHelper.swift in Sources */,
+				9312D09C1D33A4D300B00E8C /* ContactDetailViewController.swift in Sources */,
 				DA00A49E1D23BB1300CDEA7B /* UniversityCountryListViewController.swift in Sources */,
 				938E085D1D2677E200CAAFDA /* ProgrammesTableViewCell.swift in Sources */,
 				9312D0981D33872300B00E8C /* ProgrammeDetailViewController.swift in Sources */,

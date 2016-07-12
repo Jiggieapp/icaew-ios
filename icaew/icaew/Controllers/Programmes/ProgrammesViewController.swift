@@ -16,7 +16,6 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
     @IBOutlet var tableView: UITableView!
     
     private var headerImageView = UIImageView(image: UIImage(named: "image-home")!)
-    private var headerView: UIView!
     private var programmes: [Programme]?
     
     
@@ -31,10 +30,10 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
         self.loadData()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
-        self.hideNavigationBar(animated: true)
+        self.hideNavigationBar()
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,10 +64,10 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
         self.headerImageView.contentMode = .ScaleAspectFill
         self.headerImageView.clipsToBounds = true
         
-        self.headerView = UIView(frame: CGRectMake(0, 0, UIScreen.width(), kTableHeaderViewHeight))
-        self.headerView.addSubview(headerImageView)
+        let headerView = UIView(frame: CGRectMake(0, 0, UIScreen.width(), kTableHeaderViewHeight))
+        headerView.addSubview(headerImageView)
 
-        self.tableView.tableHeaderView = self.headerView
+        self.tableView.tableHeaderView = headerView
         self.tableView.tableFooterView = UIView()
         self.tableView.registerNib(ProgrammesTableViewCell.nib(),
                                    forCellReuseIdentifier: kProgrammesCellIdentifier)
@@ -94,12 +93,12 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
         if let programmes = self.programmes {
             let programme = programmes[indexPath.section]
             cell.initialLabel.text = programme.initial.uppercaseString
-            cell.titleLabel.text = programme.title.capitalizedString
+            cell.titleLabel.text = programme.title.uppercaseString
             
             var detail = programme.detail
-            detail += "<style>body{font-family: '\(cell.detailLabel.font.fontName)'; font-size: \(cell.detailLabel.font.pointSize)px; color: #AAAAAA;}</style>"
+            detail += "<style>body{font-family: '\(cell.detailLabel.font.fontName)'; font-size: \(cell.detailLabel.font.pointSize)px; color: #787878;}</style>"
             
-            if let htmlData = description.dataUsingEncoding(NSUnicodeStringEncoding) {
+            if let htmlData = detail.dataUsingEncoding(NSUnicodeStringEncoding) {
                 do {
                     let attributedText = try NSAttributedString(data: htmlData, options: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute : NSUTF8StringEncoding], documentAttributes: nil)
                     cell.detailLabel.text = nil
