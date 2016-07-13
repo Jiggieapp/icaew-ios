@@ -18,6 +18,8 @@
 		9312D0A91D35032900B00E8C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312D0A81D35032900B00E8C /* Event.swift */; };
 		9312D0B01D350C9F00B00E8C /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312D0AE1D350C9F00B00E8C /* EventListViewController.swift */; };
 		9312D0B11D350C9F00B00E8C /* EventListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9312D0AF1D350C9F00B00E8C /* EventListViewController.xib */; };
+		9312D0B41D361A4B00B00E8C /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312D0B21D361A4B00B00E8C /* EventDetailViewController.swift */; };
+		9312D0B51D361A4B00B00E8C /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9312D0B31D361A4B00B00E8C /* EventDetailViewController.xib */; };
 		938E085D1D2677E200CAAFDA /* ProgrammesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E085B1D2677E200CAAFDA /* ProgrammesTableViewCell.swift */; };
 		938E085E1D2677E200CAAFDA /* ProgrammesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 938E085C1D2677E200CAAFDA /* ProgrammesTableViewCell.xib */; };
 		938E08611D335D9A00CAAFDA /* Programme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E08601D335D9A00CAAFDA /* Programme.swift */; };
@@ -77,6 +79,8 @@
 		9312D0A81D35032900B00E8C /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		9312D0AE1D350C9F00B00E8C /* EventListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		9312D0AF1D350C9F00B00E8C /* EventListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventListViewController.xib; sourceTree = "<group>"; };
+		9312D0B21D361A4B00B00E8C /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		9312D0B31D361A4B00B00E8C /* EventDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailViewController.xib; sourceTree = "<group>"; };
 		938E085B1D2677E200CAAFDA /* ProgrammesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammesTableViewCell.swift; sourceTree = "<group>"; };
 		938E085C1D2677E200CAAFDA /* ProgrammesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgrammesTableViewCell.xib; sourceTree = "<group>"; };
 		938E08601D335D9A00CAAFDA /* Programme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Programme.swift; sourceTree = "<group>"; };
@@ -306,6 +310,8 @@
 			children = (
 				9312D0AE1D350C9F00B00E8C /* EventListViewController.swift */,
 				9312D0AF1D350C9F00B00E8C /* EventListViewController.xib */,
+				9312D0B21D361A4B00B00E8C /* EventDetailViewController.swift */,
+				9312D0B31D361A4B00B00E8C /* EventDetailViewController.xib */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -473,6 +479,7 @@
 				9312D0991D33872300B00E8C /* ProgrammeDetailViewController.xib in Resources */,
 				938E085E1D2677E200CAAFDA /* ProgrammesTableViewCell.xib in Resources */,
 				DA0E07821D33861F00E5A29C /* DynamicTextCell.xib in Resources */,
+				9312D0B51D361A4B00B00E8C /* EventDetailViewController.xib in Resources */,
 				DA00A48F1D23A9E900CDEA7B /* Assets.xcassets in Resources */,
 				9312D0B11D350C9F00B00E8C /* EventListViewController.xib in Resources */,
 				DA00A4A31D23BB2700CDEA7B /* AboutViewController.xib in Resources */,
@@ -764,6 +771,7 @@
 				DA00A48E1D23A9E900CDEA7B /* UIKitHelper.swift in Sources */,
 				9312D09C1D33A4D300B00E8C /* ContactDetailViewController.swift in Sources */,
 				938E085D1D2677E200CAAFDA /* ProgrammesTableViewCell.swift in Sources */,
+				9312D0B41D361A4B00B00E8C /* EventDetailViewController.swift in Sources */,
 				9312D0981D33872300B00E8C /* ProgrammeDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
