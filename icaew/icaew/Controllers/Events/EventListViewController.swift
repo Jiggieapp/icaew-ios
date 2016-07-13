@@ -26,7 +26,7 @@ class EventListViewController: BaseViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupNavigationBar(title: "EVENTS IN "+"INDONESIA")
+        self.setupNavigationBar(title: "EVENTS IN "+country.name.uppercaseString)
         
         self.setupView()
         self.loadData()
