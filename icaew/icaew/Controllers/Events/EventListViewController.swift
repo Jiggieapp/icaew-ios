@@ -14,8 +14,14 @@ class EventListViewController: BaseViewController, UITableViewDataSource, UITabl
 
     @IBOutlet var tableView: UITableView!
     
+    private var country: Country!
     private var events: [Event]?
     
+    
+    convenience init(country: Country) {
+        self.init(nibName: "EventListViewController", bundle: nil)
+        self.country = country
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

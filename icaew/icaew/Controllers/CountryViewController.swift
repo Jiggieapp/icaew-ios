@@ -9,9 +9,9 @@
 import UIKit
 
 enum CountrySource {
-    case contact
-    case event
-    case university
+    case Contact
+    case Event
+    case University
 }
 
 class CountryViewController: BaseViewController {
@@ -37,16 +37,17 @@ class CountryViewController: BaseViewController {
     }
     
     func setupView() {
-        
-        switch self.countrySource! {
-        case .contact:
-            self.setupNavigationBar(title: "ICAEW OFFICES IN SOUTH EAST ASIA")
-    
-        case .event:
-            self.setupNavigationBar(title: "ICAEW EVENTS")
-            
-        case .university:
-            self.setupNavigationBar(title: "ICAEW PARTNER UNIVERSITY")
+        if let countrySource = self.countrySource {
+            switch countrySource {
+            case .Contact:
+                self.setupNavigationBar(title: "ICAEW OFFICES IN SOUTH EAST ASIA")
+                
+            case .Event:
+                self.setupNavigationBar(title: "ICAEW EVENTS")
+                
+            case .University:
+                self.setupNavigationBar(title: "ICAEW PARTNER UNIVERSITY")
+            }
         }
         
         self.collectionView.registerNib(CountryCell.nib(),
@@ -104,8 +105,26 @@ class CountryViewController: BaseViewController {
     
     // MARK: - UICollectionViewDelegate protocol
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        // handle tap events
-        print("You selected cell #\(indexPath.item)!")
+        if let countrySource = self.countrySource {
+            guard let countries = self.countries else {
+                return
+            }
+            
+            let country = countries[indexPath.item]
+            
+            self.removeBackButtonTitle()
+            
+            switch countrySource {
+            case .Contact:
+                break
+                
+            case .Event:
+                self.navigationController?.pushViewController(EventListViewController(countryId: country.id), animated: true)
+                
+            case .University:
+                break
+            }
+        }
     }
 
 }
