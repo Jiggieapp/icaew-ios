@@ -116,10 +116,12 @@ class CountryViewController: BaseViewController {
             
             switch countrySource {
             case .Contact:
-                self.navigationController?.pushViewController(ContactDetailViewController(country: country), animated: true)
+                self.navigationController?.pushViewController(ContactDetailViewController(country: country),
+                                                              animated: true)
                 
             case .Event:
-                self.navigationController?.pushViewController(EventListViewController(country: country), animated: true)
+                self.navigationController?.pushViewController(EventListViewController(country: country),
+                                                              animated: true)
                 
             case .University:
                 break

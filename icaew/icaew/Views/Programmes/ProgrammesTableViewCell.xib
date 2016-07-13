@@ -39,13 +39,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ICAEW ACA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahd-AF-9pC">
-                                <rect key="frame" x="79" y="18.5" width="80.5" height="18"/>
+                                <rect key="frame" x="79" y="17.5" width="80.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The ACA, is one of the most advanced learning and professional evelopment programmes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzn-LP-c5I">
-                                <rect key="frame" x="79" y="38.5" width="197" height="24"/>
+                                <rect key="frame" x="79" y="37.5" width="197" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -61,13 +61,12 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="s0Y-dC-axV" secondAttribute="bottom" constant="8" id="1II-rd-dtQ"/>
                             <constraint firstAttribute="trailing" secondItem="wwG-24-I5z" secondAttribute="trailing" constant="8" id="5HF-dF-jAt"/>
-                            <constraint firstAttribute="bottom" secondItem="wwG-24-I5z" secondAttribute="bottom" constant="33.5" id="Eqm-Tf-cNx"/>
                             <constraint firstItem="nzn-LP-c5I" firstAttribute="top" secondItem="ahd-AF-9pC" secondAttribute="bottom" constant="2" id="G4H-z1-F2U"/>
                             <constraint firstItem="nzn-LP-c5I" firstAttribute="leading" secondItem="ahd-AF-9pC" secondAttribute="leading" id="Gs3-Yx-dk6"/>
+                            <constraint firstItem="wwG-24-I5z" firstAttribute="centerY" secondItem="F9h-wJ-jOA" secondAttribute="centerY" id="S8o-ea-JMR"/>
                             <constraint firstItem="s0Y-dC-axV" firstAttribute="leading" secondItem="F9h-wJ-jOA" secondAttribute="leading" constant="8" id="Y2M-YE-gfR"/>
                             <constraint firstItem="ahd-AF-9pC" firstAttribute="leading" secondItem="s0Y-dC-axV" secondAttribute="trailing" constant="7.5" id="iew-Dj-cw9"/>
-                            <constraint firstItem="ahd-AF-9pC" firstAttribute="top" secondItem="F9h-wJ-jOA" secondAttribute="top" constant="18.5" id="jXQ-oC-tCC"/>
-                            <constraint firstItem="wwG-24-I5z" firstAttribute="top" secondItem="F9h-wJ-jOA" secondAttribute="top" constant="33" id="rEC-CC-i0h"/>
+                            <constraint firstItem="ahd-AF-9pC" firstAttribute="top" secondItem="F9h-wJ-jOA" secondAttribute="top" constant="17.5" id="jXQ-oC-tCC"/>
                             <constraint firstItem="s0Y-dC-axV" firstAttribute="top" secondItem="F9h-wJ-jOA" secondAttribute="top" constant="8" id="rsx-TV-59u"/>
                             <constraint firstItem="wwG-24-I5z" firstAttribute="leading" secondItem="nzn-LP-c5I" secondAttribute="trailing" constant="8" id="t04-yJ-WqW"/>
                         </constraints>

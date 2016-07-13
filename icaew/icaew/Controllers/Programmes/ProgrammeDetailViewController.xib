@@ -435,12 +435,12 @@
                                     <exclude reference="4H2-Jt-YML"/>
                                     <exclude reference="GMM-ai-3kP"/>
                                     <exclude reference="glC-Sx-osR"/>
-                                    <exclude reference="Teu-gp-hvF"/>
-                                    <exclude reference="XNn-px-0cs"/>
                                     <exclude reference="5m8-em-5mY"/>
                                     <exclude reference="Gj6-1f-fA2"/>
                                     <exclude reference="cvc-Ls-9X1"/>
                                     <exclude reference="diT-Bj-fRr"/>
+                                    <exclude reference="Teu-gp-hvF"/>
+                                    <exclude reference="XNn-px-0cs"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
@@ -453,12 +453,12 @@
                                     <include reference="4H2-Jt-YML"/>
                                     <include reference="GMM-ai-3kP"/>
                                     <include reference="glC-Sx-osR"/>
-                                    <include reference="Teu-gp-hvF"/>
-                                    <include reference="XNn-px-0cs"/>
                                     <include reference="5m8-em-5mY"/>
                                     <include reference="Gj6-1f-fA2"/>
                                     <include reference="cvc-Ls-9X1"/>
                                     <include reference="diT-Bj-fRr"/>
+                                    <include reference="Teu-gp-hvF"/>
+                                    <include reference="XNn-px-0cs"/>
                                 </mask>
                             </variation>
                         </view>
