@@ -17,12 +17,18 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
     
     private var headerImageView = UIImageView(image: UIImage(named: "image-home")!)
     private var items = [[String : String]]()
+    private var country: Country!
     
+    
+    convenience init(country: Country) {
+        self.init(nibName: "ContactDetailViewController", bundle: nil)
+        self.country = country
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupNavigationBar(title: "ICAEW OFFICE INDONESIA")
+        self.setupNavigationBar(title: "ICAEW OFFICE "+country.name.uppercaseString)
         self.setupView()
         self.loadData()
     }
@@ -35,7 +41,7 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
     // MARK: Data
     private func loadData() {
         self.showHUD()
-        Contact.retrieveContactDetail(id: 1) { (result) in
+        Contact.retrieveContactDetail(id: country.id) { (result) in
             switch result {
             case .Success(let contact):
                 self.items.append(["address-icon" : "ICAEW "+contact.countryName+"*#*"+contact.address])

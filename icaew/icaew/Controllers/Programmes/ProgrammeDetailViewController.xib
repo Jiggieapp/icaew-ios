@@ -30,23 +30,6 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7FA-sJ-hW4" customClass="YTPlayerView">
-                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="190" id="PJB-1z-F0L"/>
-                                    </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="PJB-1z-F0L"/>
-                                        </mask>
-                                    </variation>
-                                    <variation key="heightClass=regular-widthClass=compact">
-                                        <mask key="constraints">
-                                            <include reference="PJB-1z-F0L"/>
-                                        </mask>
-                                    </variation>
-                                </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qeX-Ij-OBb">
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                     <subviews>
@@ -124,7 +107,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ecz-60-y0F">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <state key="normal" image="share-icon">
+                                                    <state key="normal" image="like-icon">
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -192,7 +175,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70B-OE-JOa">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <state key="normal" image="share-icon">
+                                                    <state key="normal" image="inquiry-icon">
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -260,7 +243,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4z-zh-BhO">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <state key="normal" image="share-icon">
+                                                    <state key="normal" image="info-icon">
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -410,59 +393,72 @@
                                         </mask>
                                     </variation>
                                 </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7FA-sJ-hW4" customClass="YTPlayerView">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="190" id="PJB-1z-F0L"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="PJB-1z-F0L"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="PJB-1z-F0L"/>
+                                        </mask>
+                                    </variation>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="akT-IT-DqC" firstAttribute="leading" secondItem="96j-yo-Nzh" secondAttribute="leading" constant="15" id="4H2-Jt-YML"/>
                                 <constraint firstItem="7FA-sJ-hW4" firstAttribute="leading" secondItem="96j-yo-Nzh" secondAttribute="leading" constant="15" id="5m8-em-5mY"/>
                                 <constraint firstAttribute="trailing" secondItem="akT-IT-DqC" secondAttribute="trailing" constant="15" id="GMM-ai-3kP"/>
-                                <constraint firstItem="7FA-sJ-hW4" firstAttribute="top" secondItem="qeX-Ij-OBb" secondAttribute="bottom" constant="15" id="THi-tz-4Z3">
-                                    <variation key="heightClass=regular-widthClass=compact" constant="8"/>
-                                </constraint>
+                                <constraint firstItem="7FA-sJ-hW4" firstAttribute="top" secondItem="qeX-Ij-OBb" secondAttribute="bottom" constant="20" id="Gj6-1f-fA2"/>
                                 <constraint firstItem="qeX-Ij-OBb" firstAttribute="top" secondItem="akT-IT-DqC" secondAttribute="bottom" constant="15" id="Teu-gp-hvF">
                                     <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                                 </constraint>
                                 <constraint firstItem="qeX-Ij-OBb" firstAttribute="centerX" secondItem="96j-yo-Nzh" secondAttribute="centerX" id="XNn-px-0cs"/>
-                                <constraint firstAttribute="bottom" secondItem="7FA-sJ-hW4" secondAttribute="bottom" id="cvc-Ls-9X1">
-                                    <variation key="heightClass=regular-widthClass=compact" constant="15"/>
-                                </constraint>
+                                <constraint firstAttribute="bottom" secondItem="7FA-sJ-hW4" secondAttribute="bottom" constant="20" id="cvc-Ls-9X1"/>
                                 <constraint firstAttribute="trailing" secondItem="7FA-sJ-hW4" secondAttribute="trailing" constant="15" id="diT-Bj-fRr"/>
                                 <constraint firstItem="akT-IT-DqC" firstAttribute="top" secondItem="96j-yo-Nzh" secondAttribute="top" constant="15" id="glC-Sx-osR"/>
                             </constraints>
                             <variation key="default">
                                 <mask key="subviews">
                                     <exclude reference="akT-IT-DqC"/>
-                                    <exclude reference="7FA-sJ-hW4"/>
                                     <exclude reference="qeX-Ij-OBb"/>
+                                    <exclude reference="7FA-sJ-hW4"/>
                                 </mask>
                                 <mask key="constraints">
                                     <exclude reference="4H2-Jt-YML"/>
                                     <exclude reference="GMM-ai-3kP"/>
                                     <exclude reference="glC-Sx-osR"/>
-                                    <exclude reference="5m8-em-5mY"/>
-                                    <exclude reference="THi-tz-4Z3"/>
-                                    <exclude reference="cvc-Ls-9X1"/>
-                                    <exclude reference="diT-Bj-fRr"/>
                                     <exclude reference="Teu-gp-hvF"/>
                                     <exclude reference="XNn-px-0cs"/>
+                                    <exclude reference="5m8-em-5mY"/>
+                                    <exclude reference="Gj6-1f-fA2"/>
+                                    <exclude reference="cvc-Ls-9X1"/>
+                                    <exclude reference="diT-Bj-fRr"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
                                 <mask key="subviews">
                                     <include reference="akT-IT-DqC"/>
-                                    <include reference="7FA-sJ-hW4"/>
                                     <include reference="qeX-Ij-OBb"/>
+                                    <include reference="7FA-sJ-hW4"/>
                                 </mask>
                                 <mask key="constraints">
                                     <include reference="4H2-Jt-YML"/>
                                     <include reference="GMM-ai-3kP"/>
                                     <include reference="glC-Sx-osR"/>
-                                    <include reference="5m8-em-5mY"/>
-                                    <include reference="THi-tz-4Z3"/>
-                                    <include reference="cvc-Ls-9X1"/>
-                                    <include reference="diT-Bj-fRr"/>
                                     <include reference="Teu-gp-hvF"/>
                                     <include reference="XNn-px-0cs"/>
+                                    <include reference="5m8-em-5mY"/>
+                                    <include reference="Gj6-1f-fA2"/>
+                                    <include reference="cvc-Ls-9X1"/>
+                                    <include reference="diT-Bj-fRr"/>
                                 </mask>
                             </variation>
                         </view>
@@ -533,6 +529,9 @@
         </view>
     </objects>
     <resources>
-        <image name="share-icon" width="35" height="35"/>
+        <image name="info-icon" width="40" height="40"/>
+        <image name="inquiry-icon" width="40" height="40"/>
+        <image name="like-icon" width="40" height="40"/>
+        <image name="share-icon" width="40" height="40"/>
     </resources>
 </document>

@@ -2,18 +2,34 @@
 //  EventListViewController.swift
 //  icaew
 //
-//  Created by Setiady Wiguna on 7/12/16.
+//  Created by Mohammad Nuruddin Effendi on 7/12/16.
 //  Copyright © 2016 Jiggie. All rights reserved.
 //
 
 import UIKit
 
-class EventListViewController: BaseViewController {
+private let kEventListCellIdentifier = "kEventListCellIdentifier"
 
+class EventListViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
+
+    @IBOutlet var tableView: UITableView!
+    
+    private var country: Country!
+    private var events: [Event]?
+    
+    
+    convenience init(country: Country) {
+        self.init(nibName: "EventListViewController", bundle: nil)
+        self.country = country
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.setupNavigationBar(title: "EVENTS IN "+country.name.uppercaseString)
+        
+        self.setupView()
+        self.loadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +37,98 @@ class EventListViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: View
+    private func setupView() {
+        self.tableView.tableFooterView = UIView()
+        self.tableView.registerNib(ProgrammesTableViewCell.nib(),
+                                   forCellReuseIdentifier: kEventListCellIdentifier)
     }
-    */
-
+    
+    // MARK: Data
+    private func loadData() {
+        Event.retrieveEvents(id: 1) { (result) in
+            switch result {
+            case .Success(let events):
+                self.events = events
+                self.tableView.reloadData()
+                
+            case .Error(_):
+                break
+            }
+        }
+    }
+    
+    // MARK: UITableViewDataSource
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        guard let events = self.events else {
+            return 0
+        }
+        
+        return events.count
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(kEventListCellIdentifier) as! ProgrammesTableViewCell
+        cell.selectionStyle = .None
+        
+        cell.roundedView.backgroundColor = UIColor(hexString: "05D3BB")
+        
+        if let events = self.events {
+            let event = events[indexPath.row]
+            
+            let date = NSDate.dateFromString("yyyy-MM-dd HH:mm:ss", string: event.startDate)
+            
+            if let date = date,
+                stringDate = NSDate.stringFromDate(date, format: "MMM dd") {
+                let startDate = stringDate.stringByReplacingOccurrencesOfString(" ", withString: "\n")
+                cell.initialLabel.text = startDate
+            }
+            
+            cell.titleLabel.text = event.title
+            
+            
+            var detail = event.subtitle
+            detail += "<style>body{font-family: '\(cell.detailLabel.font.fontName)'; font-size: \(cell.detailLabel.font.pointSize)px; color: #787878;}</style>"
+            
+            if let htmlData = detail.dataUsingEncoding(NSUnicodeStringEncoding) {
+                do {
+                    let attributedText = try NSAttributedString(data: htmlData, options: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute : NSUTF8StringEncoding], documentAttributes: nil)
+                    cell.detailLabel.text = nil
+                    cell.detailLabel.attributedText = attributedText
+                } catch let error {
+                    print("Couldn't translate \(description): \(error) ")
+                }
+            } else {
+                cell.detailLabel.attributedText = nil
+                cell.detailLabel.text = event.subtitle
+            }
+        }
+        
+        return cell
+    }
+    
+    // MARK: UITableViewDelegate
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.001
+    }
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 }
