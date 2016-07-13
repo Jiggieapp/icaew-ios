@@ -10,26 +10,44 @@ import UIKit
 
 class UniversityDetailViewController: BaseViewController {
 
+    private var country: Country!
+    private var university: University?
+    
+    convenience init(country: Country) {
+        self.init(nibName: "UniversityDetailViewController", bundle: nil)
+        self.country = country
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.setupView()
     }
 
+    func setupView() {
+        self.setupNavigationBar(title: self.country.name.uppercaseString)
+    }
+    
+    // MARK: Data
+    private func loadData() {
+        self.showHUD()
+        University.retrieveUniversityDetail(self.country.id, completionHandler: {(result) in
+            switch result {
+            case .Success(let university):
+                self.university = university
+                
+            case .Error(_):
+                break
+            }
+            
+            self.dismissHUD()
+        })
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

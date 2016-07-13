@@ -96,7 +96,7 @@ class CountryViewController: BaseViewController {
         if let countries = self.countries {
             let country = countries[indexPath.row]
             
-            cell.countryName.text = country.name
+            cell.countryName.text = country.name.uppercaseString
             cell.countryImage.sd_setImageWithURL(NSURL(string: country.imageURL))
         }
         
@@ -124,7 +124,7 @@ class CountryViewController: BaseViewController {
                                                               animated: true)
                 
             case .University:
-                break
+                self.navigationController?.pushViewController(UniversityDetailViewController(country: country), animated: true)
             }
         }
     }
