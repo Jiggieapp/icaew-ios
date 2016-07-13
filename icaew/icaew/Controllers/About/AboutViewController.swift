@@ -40,7 +40,7 @@ class AboutViewController: BaseViewController, UITableViewDataSource, UITableVie
         self.setupNavigationBar(title: "About Us")
         self.tableView.tableFooterView = UIView()
     
-        self.tableHeaderViewHeight = CGFloat(3) / CGFloat(4) * self.view.bounds.size.width
+//        self.tableHeaderViewHeight = CGFloat(3) / CGFloat(4) * self.view.bounds.size.width
         self.headerView = UIView(frame: CGRectMake(0, 0, UIScreen.width(), self.tableHeaderViewHeight))
         self.headerImageView = UIImageView(image: UIImage(named: "image-home")!)
         
@@ -80,7 +80,7 @@ class AboutViewController: BaseViewController, UITableViewDataSource, UITableVie
                                 }
                                 
                                 if let title = aboutDict["title"] as? String {
-                                    self.setupNavigationBar(title: title)
+                                    self.setupNavigationBar(title: title.uppercaseString)
                                 }
                             }
                             self.tableView.reloadData()

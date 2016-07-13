@@ -26,7 +26,7 @@ class UniversityDetailViewController: BaseViewController {
     }
 
     func setupView() {
-        self.setupNavigationBar(title: self.country.name)
+        self.setupNavigationBar(title: self.country.name.uppercaseString)
     }
     
     // MARK: Data
