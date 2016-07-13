@@ -10,7 +10,7 @@ import UIKit
 
 class DynamicTextCell: UITableViewCell {
     
-    @IBOutlet weak var dynamicTextLabel: UILabel!
+    @IBOutlet var dynamicTextLabel: UILabel!
     
     static func nib() -> UINib {
         return UINib(nibName: "DynamicTextCell", bundle: nil)
