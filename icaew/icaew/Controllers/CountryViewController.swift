@@ -110,6 +110,28 @@ class CountryViewController: BaseViewController {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
+        
+        if let countries = self.countries {
+            let country = countries[indexPath.row]
+            
+            self.removeBackButtonTitle()
+            
+            switch self.countrySource! {
+            case .contact:
+                self.navigationController?.pushViewController(UniversityDetailViewController(country: country), animated: true)
+                
+            case .event:
+                self.navigationController?.pushViewController(UniversityDetailViewController(country: country), animated: true)
+                
+            case .university:
+                self.navigationController?.pushViewController(UniversityDetailViewController(country: country), animated: true)
+                
+            default:
+                break
+            }
+        }
+        
+       
     }
 
 }

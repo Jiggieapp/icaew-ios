@@ -46,6 +46,7 @@
 		DA1D18611D34FE23002386E0 /* UniversityDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA1D185F1D34FE23002386E0 /* UniversityDetailViewController.xib */; };
 		DA1D18641D34FE5A002386E0 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D18621D34FE5A002386E0 /* EventListViewController.swift */; };
 		DA1D18651D34FE5A002386E0 /* EventListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA1D18631D34FE5A002386E0 /* EventListViewController.xib */; };
+		DA1D18671D350607002386E0 /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D18661D350607002386E0 /* University.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		DA1D185F1D34FE23002386E0 /* UniversityDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UniversityDetailViewController.xib; sourceTree = "<group>"; };
 		DA1D18621D34FE5A002386E0 /* EventListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		DA1D18631D34FE5A002386E0 /* EventListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventListViewController.xib; sourceTree = "<group>"; };
+		DA1D18661D350607002386E0 /* University.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
 		DF3D20665CF70BA7270597B9 /* Pods-icaewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-icaewTests/Pods-icaewTests.release.xcconfig"; sourceTree = "<group>"; };
 		ECDFA172AD05F163FD57425C /* Pods-icaewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaewUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-icaewUITests/Pods-icaewUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +176,7 @@
 				938E08601D335D9A00CAAFDA /* Programme.swift */,
 				DA1D18581D34D5B6002386E0 /* Country.swift */,
 				9312D09E1D33AA4400B00E8C /* Contact.swift */,
+				DA1D18661D350607002386E0 /* University.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -767,6 +770,7 @@
 				DA00A4931D23BA6300CDEA7B /* BaseViewController.swift in Sources */,
 				DA00A48E1D23A9E900CDEA7B /* UIKitHelper.swift in Sources */,
 				9312D09C1D33A4D300B00E8C /* ContactDetailViewController.swift in Sources */,
+				DA1D18671D350607002386E0 /* University.swift in Sources */,
 				938E085D1D2677E200CAAFDA /* ProgrammesTableViewCell.swift in Sources */,
 				9312D0981D33872300B00E8C /* ProgrammeDetailViewController.swift in Sources */,
 			);
