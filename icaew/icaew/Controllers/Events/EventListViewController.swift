@@ -46,7 +46,8 @@ class EventListViewController: BaseViewController, UITableViewDataSource, UITabl
     
     // MARK: Data
     private func loadData() {
-        Event.retrieveEvents(id: 1) { (result) in
+        self.showHUD()
+        Event.retrieveEvents(countryId: self.country.id) { (result) in
             switch result {
             case .Success(let events):
                 self.events = events
@@ -55,6 +56,8 @@ class EventListViewController: BaseViewController, UITableViewDataSource, UITabl
             case .Error(_):
                 break
             }
+            
+            self.dismissHUD()
         }
     }
     

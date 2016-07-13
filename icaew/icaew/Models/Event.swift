@@ -30,8 +30,9 @@ class Event: MTLModel, MTLJSONSerializing {
                 "countryName" : "country_name"]
     }
     
-    static func retrieveEvents(id id: Int, completionHandler: EventsCompletionHandler) {
-        if let request = NetworkManager.request(.GET, APIEndpoint.Events) {
+    static func retrieveEvents(countryId id: Int, completionHandler: EventsCompletionHandler) {
+        let parameters: [String : AnyObject] = ["country_id" : id]
+        if let request = NetworkManager.request(.GET, APIEndpoint.Events, parameters: parameters) {
             request.responseJSON(completionHandler: { (response) in
                 let result: APIResult<[Event]>!
                 switch response.result {
