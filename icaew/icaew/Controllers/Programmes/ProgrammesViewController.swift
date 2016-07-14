@@ -115,6 +115,11 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if let programmes = self.programmes
+            where programmes.count-1 == section {
+            return 10
+        }
+        
         return 0.001
     }
     
