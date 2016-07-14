@@ -139,7 +139,8 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
             let programme = programmes[indexPath.section]
             
             self.removeBackButtonTitle()
-            self.navigationController?.pushViewController(ProgrammeDetailViewController(programme: programme), animated: true)
+            self.navigationController?.pushViewController(ProgrammeDetailViewController(programme: programme),
+                                                          animated: true)
         }
     }
     

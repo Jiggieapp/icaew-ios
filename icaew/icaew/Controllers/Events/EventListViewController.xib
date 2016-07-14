@@ -32,6 +32,7 @@
                 <constraint firstAttribute="bottom" secondItem="uUr-HQ-5hJ" secondAttribute="bottom" id="TOC-dX-x0t"/>
                 <constraint firstItem="uUr-HQ-5hJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YfE-A9-1fx"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="uUr-HQ-5hJ"/>

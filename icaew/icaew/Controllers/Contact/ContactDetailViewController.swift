@@ -95,6 +95,7 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
         cell.selectionStyle = .None
         cell.backgroundColor = UIColor.clearColor()
         cell.imageView?.image = UIImage(named: item.keys.first!)
+        cell.textLabel?.font = UIFont.systemFontOfSize(15)
         
         if indexPath.row == 0 {
             let text = item.values.first!.componentsSeparatedByString("*#*")

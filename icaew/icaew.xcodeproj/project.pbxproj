@@ -15,6 +15,10 @@
 		9312D09C1D33A4D300B00E8C /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312D09A1D33A4D300B00E8C /* ContactDetailViewController.swift */; };
 		9312D09D1D33A4D300B00E8C /* ContactDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9312D09B1D33A4D300B00E8C /* ContactDetailViewController.xib */; };
 		9312D09F1D33AA4400B00E8C /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312D09E1D33AA4400B00E8C /* Contact.swift */; };
+		9312D0B41D361A4B00B00E8C /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312D0B21D361A4B00B00E8C /* EventDetailViewController.swift */; };
+		9312D0B51D361A4B00B00E8C /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9312D0B31D361A4B00B00E8C /* EventDetailViewController.xib */; };
+		9312D0B91D362FAC00B00E8C /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312D0B71D362FAC00B00E8C /* EventListViewController.swift */; };
+		9312D0BA1D362FAC00B00E8C /* EventListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9312D0B81D362FAC00B00E8C /* EventListViewController.xib */; };
 		938E085D1D2677E200CAAFDA /* ProgrammesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E085B1D2677E200CAAFDA /* ProgrammesTableViewCell.swift */; };
 		938E085E1D2677E200CAAFDA /* ProgrammesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 938E085C1D2677E200CAAFDA /* ProgrammesTableViewCell.xib */; };
 		938E08611D335D9A00CAAFDA /* Programme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E08601D335D9A00CAAFDA /* Programme.swift */; };
@@ -42,8 +46,6 @@
 		DA1D185D1D34DDEE002386E0 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA1D185B1D34DDEE002386E0 /* CountryCell.xib */; };
 		DA1D18601D34FE23002386E0 /* UniversityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D185E1D34FE23002386E0 /* UniversityDetailViewController.swift */; };
 		DA1D18611D34FE23002386E0 /* UniversityDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA1D185F1D34FE23002386E0 /* UniversityDetailViewController.xib */; };
-		DA1D18641D34FE5A002386E0 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D18621D34FE5A002386E0 /* EventListViewController.swift */; };
-		DA1D18651D34FE5A002386E0 /* EventListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA1D18631D34FE5A002386E0 /* EventListViewController.xib */; };
 		DA1D18671D350607002386E0 /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D18661D350607002386E0 /* University.swift */; };
 		DA1D186A1D36131E002386E0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D18681D36131E002386E0 /* Event.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +77,10 @@
 		9312D09A1D33A4D300B00E8C /* ContactDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		9312D09B1D33A4D300B00E8C /* ContactDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactDetailViewController.xib; sourceTree = "<group>"; };
 		9312D09E1D33AA4400B00E8C /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		9312D0B21D361A4B00B00E8C /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		9312D0B31D361A4B00B00E8C /* EventDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailViewController.xib; sourceTree = "<group>"; };
+		9312D0B71D362FAC00B00E8C /* EventListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
+		9312D0B81D362FAC00B00E8C /* EventListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventListViewController.xib; sourceTree = "<group>"; };
 		938E085B1D2677E200CAAFDA /* ProgrammesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammesTableViewCell.swift; sourceTree = "<group>"; };
 		938E085C1D2677E200CAAFDA /* ProgrammesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgrammesTableViewCell.xib; sourceTree = "<group>"; };
 		938E08601D335D9A00CAAFDA /* Programme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Programme.swift; sourceTree = "<group>"; };
@@ -111,8 +117,6 @@
 		DA1D185B1D34DDEE002386E0 /* CountryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
 		DA1D185E1D34FE23002386E0 /* UniversityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityDetailViewController.swift; sourceTree = "<group>"; };
 		DA1D185F1D34FE23002386E0 /* UniversityDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UniversityDetailViewController.xib; sourceTree = "<group>"; };
-		DA1D18621D34FE5A002386E0 /* EventListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
-		DA1D18631D34FE5A002386E0 /* EventListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventListViewController.xib; sourceTree = "<group>"; };
 		DA1D18661D350607002386E0 /* University.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
 		DA1D18681D36131E002386E0 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		DF3D20665CF70BA7270597B9 /* Pods-icaewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icaewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-icaewTests/Pods-icaewTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -307,8 +311,10 @@
 		DA00A4841D23A9E900CDEA7B /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				DA1D18621D34FE5A002386E0 /* EventListViewController.swift */,
-				DA1D18631D34FE5A002386E0 /* EventListViewController.xib */,
+				9312D0B71D362FAC00B00E8C /* EventListViewController.swift */,
+				9312D0B81D362FAC00B00E8C /* EventListViewController.xib */,
+				9312D0B21D361A4B00B00E8C /* EventDetailViewController.swift */,
+				9312D0B31D361A4B00B00E8C /* EventDetailViewController.xib */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -475,9 +481,10 @@
 				9312D09D1D33A4D300B00E8C /* ContactDetailViewController.xib in Resources */,
 				9312D0991D33872300B00E8C /* ProgrammeDetailViewController.xib in Resources */,
 				938E085E1D2677E200CAAFDA /* ProgrammesTableViewCell.xib in Resources */,
+				9312D0BA1D362FAC00B00E8C /* EventListViewController.xib in Resources */,
 				DA0E07821D33861F00E5A29C /* DynamicTextCell.xib in Resources */,
+				9312D0B51D361A4B00B00E8C /* EventDetailViewController.xib in Resources */,
 				DA00A48F1D23A9E900CDEA7B /* Assets.xcassets in Resources */,
-				DA1D18651D34FE5A002386E0 /* EventListViewController.xib in Resources */,
 				DA00A4A31D23BB2700CDEA7B /* AboutViewController.xib in Resources */,
 				DA1D18611D34FE23002386E0 /* UniversityDetailViewController.xib in Resources */,
 			);
@@ -748,7 +755,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9312D09F1D33AA4400B00E8C /* Contact.swift in Sources */,
-				DA1D18641D34FE5A002386E0 /* EventListViewController.swift in Sources */,
 				938E08611D335D9A00CAAFDA /* Programme.swift in Sources */,
 				DA00A48C1D23A9E900CDEA7B /* FoundationHelper.swift in Sources */,
 				DA00A48B1D23A9E900CDEA7B /* APIHelper.swift in Sources */,
@@ -760,6 +766,7 @@
 				DA00A48D1D23A9E900CDEA7B /* NetworkHelper.swift in Sources */,
 				DA1D18591D34D5B6002386E0 /* Country.swift in Sources */,
 				DA1D186A1D36131E002386E0 /* Event.swift in Sources */,
+				9312D0B91D362FAC00B00E8C /* EventListViewController.swift in Sources */,
 				DA1D185C1D34DDEE002386E0 /* CountryCell.swift in Sources */,
 				DA1D18601D34FE23002386E0 /* UniversityDetailViewController.swift in Sources */,
 				DA00A4961D23BA8600CDEA7B /* ProgrammesViewController.swift in Sources */,
@@ -768,6 +775,7 @@
 				9312D09C1D33A4D300B00E8C /* ContactDetailViewController.swift in Sources */,
 				DA1D18671D350607002386E0 /* University.swift in Sources */,
 				938E085D1D2677E200CAAFDA /* ProgrammesTableViewCell.swift in Sources */,
+				9312D0B41D361A4B00B00E8C /* EventDetailViewController.swift in Sources */,
 				9312D0981D33872300B00E8C /* ProgrammeDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

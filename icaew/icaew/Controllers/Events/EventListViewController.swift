@@ -46,7 +46,8 @@ class EventListViewController: BaseViewController, UITableViewDataSource, UITabl
     
     // MARK: Data
     private func loadData() {
-        Event.retrieveEvents(id: 1) { (result) in
+        self.showHUD()
+        Event.retrieveEvents(countryId: self.country.id) { (result) in
             switch result {
             case .Success(let events):
                 self.events = events
@@ -55,6 +56,8 @@ class EventListViewController: BaseViewController, UITableViewDataSource, UITabl
             case .Error(_):
                 break
             }
+            
+            self.dismissHUD()
         }
     }
     
@@ -89,7 +92,6 @@ class EventListViewController: BaseViewController, UITableViewDataSource, UITabl
             }
             
             cell.titleLabel.text = event.title
-            
             
             var detail = event.subtitle
             detail += "<style>body{font-family: '\(cell.detailLabel.font.fontName)'; font-size: \(cell.detailLabel.font.pointSize)px; color: #787878;}</style>"
@@ -130,5 +132,11 @@ class EventListViewController: BaseViewController, UITableViewDataSource, UITabl
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if let events = self.events {
+            self.removeBackButtonTitle()
+            self.navigationController?.pushViewController(EventDetailViewController(event: events[indexPath.row]),
+                                                          animated: true)
+        }
     }
 }

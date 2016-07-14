@@ -42,6 +42,9 @@
                                                     <state key="normal" image="share-icon">
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="didTapShareButton:" destination="-1" eventType="touchUpInside" id="Re7-xM-1KB"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bj3-CV-tqw">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -110,6 +113,9 @@
                                                     <state key="normal" image="like-icon">
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="didTapLikeButton:" destination="-1" eventType="touchUpInside" id="0VP-mQ-pPT"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEF-8l-1iG">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -178,6 +184,9 @@
                                                     <state key="normal" image="inquiry-icon">
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="didTapInquiryButton:" destination="-1" eventType="touchUpInside" id="ew8-LH-nDw"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inquiry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwL-DS-4Cy">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -246,6 +255,9 @@
                                                     <state key="normal" image="info-icon">
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="didTapInfoButton:" destination="-1" eventType="touchUpInside" id="YBI-MI-Bh7"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8V-CV-WGv">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -435,12 +447,12 @@
                                     <exclude reference="4H2-Jt-YML"/>
                                     <exclude reference="GMM-ai-3kP"/>
                                     <exclude reference="glC-Sx-osR"/>
-                                    <exclude reference="Teu-gp-hvF"/>
-                                    <exclude reference="XNn-px-0cs"/>
                                     <exclude reference="5m8-em-5mY"/>
                                     <exclude reference="Gj6-1f-fA2"/>
                                     <exclude reference="cvc-Ls-9X1"/>
                                     <exclude reference="diT-Bj-fRr"/>
+                                    <exclude reference="Teu-gp-hvF"/>
+                                    <exclude reference="XNn-px-0cs"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
@@ -453,12 +465,12 @@
                                     <include reference="4H2-Jt-YML"/>
                                     <include reference="GMM-ai-3kP"/>
                                     <include reference="glC-Sx-osR"/>
-                                    <include reference="Teu-gp-hvF"/>
-                                    <include reference="XNn-px-0cs"/>
                                     <include reference="5m8-em-5mY"/>
                                     <include reference="Gj6-1f-fA2"/>
                                     <include reference="cvc-Ls-9X1"/>
                                     <include reference="diT-Bj-fRr"/>
+                                    <include reference="Teu-gp-hvF"/>
+                                    <include reference="XNn-px-0cs"/>
                                 </mask>
                             </variation>
                         </view>
