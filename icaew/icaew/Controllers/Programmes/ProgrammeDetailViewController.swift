@@ -75,6 +75,10 @@ class ProgrammeDetailViewController: BaseViewController, MFMailComposeViewContro
     }
 
     @IBAction func didTapInfoButton(sender: AnyObject) {
+        let mailComposeViewController = MFMailComposeViewController()
+        mailComposeViewController.mailComposeDelegate = self
+        
+        self.presentViewController(mailComposeViewController, animated: true, completion: nil)
     }
     
     // MARK: MFMailComposeViewControllerDelegate
