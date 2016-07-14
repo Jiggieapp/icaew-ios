@@ -41,7 +41,7 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
     // MARK: Data
     private func loadData() {
         self.showHUD()
-        Contact.retrieveContactDetail(id: country.id) { (result) in
+        Contact.retrieveContactDetail(countryId: country.id) { (result) in
             switch result {
             case .Success(let contact):
                 self.items.append(["address-icon" : "ICAEW "+contact.countryName+"*#*"+contact.address])
