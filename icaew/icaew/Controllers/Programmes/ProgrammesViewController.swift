@@ -48,6 +48,15 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
             switch result {
             case .Success(let programmes):
                 self.programmes = programmes
+                
+                let predicate = NSPredicate(format: "SELF.isBanner == 1")
+                let programmes = (programmes as NSArray).filteredArrayUsingPredicate(predicate) as! [Programme]
+                
+                if let programme = programmes.first {
+                    self.headerImageView.sd_setImageWithURL(NSURL(string: programme.imageURL),
+                        placeholderImage: UIImage(named: "image-home")!)
+                }
+                
                 self.tableView.reloadData()
                 
             case .Error(_):
