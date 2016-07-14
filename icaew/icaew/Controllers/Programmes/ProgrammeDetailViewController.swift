@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import MessageUI
 import youtube_ios_player_helper
 
-class ProgrammeDetailViewController: BaseViewController {
+class ProgrammeDetailViewController: BaseViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet var detailLabel: UILabel!
     @IBOutlet var playerView: YTPlayerView!
@@ -55,5 +56,27 @@ class ProgrammeDetailViewController: BaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: Action
+    @IBAction func didTapShareButton(sender: AnyObject) {
+    }
+    
+    @IBAction func didTapLikeButton(sender: AnyObject) {
+    }
+    
+    @IBAction func didTapInquiryButton(sender: AnyObject) {
+        let mailComposeViewController = MFMailComposeViewController()
+        mailComposeViewController.mailComposeDelegate = self
+        
+        self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+    }
 
+    @IBAction func didTapInfoButton(sender: AnyObject) {
+    }
+    
+    // MARK: MFMailComposeViewControllerDelegate
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 }

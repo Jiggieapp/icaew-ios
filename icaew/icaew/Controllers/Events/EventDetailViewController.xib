@@ -108,11 +108,11 @@
                                                     <exclude reference="MNN-zy-F78"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="Th1-Nk-HLK"/>
                                                     <exclude reference="5Ef-SG-4h0"/>
                                                     <exclude reference="WXd-fR-Lyg"/>
                                                     <exclude reference="jmx-r9-bJx"/>
                                                     <exclude reference="pzs-Ew-UXF"/>
-                                                    <exclude reference="Th1-Nk-HLK"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -120,19 +120,19 @@
                                                     <include reference="MNN-zy-F78"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="Th1-Nk-HLK"/>
                                                     <include reference="5Ef-SG-4h0"/>
                                                     <include reference="WXd-fR-Lyg"/>
                                                     <include reference="jmx-r9-bJx"/>
                                                     <include reference="pzs-Ew-UXF"/>
-                                                    <include reference="Th1-Nk-HLK"/>
                                                 </mask>
                                             </variation>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQd-x9-9a8">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                            <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper tellus at euismod elementum. Aenean et lorem purus. Praesent ullamcorper nisl tortor. Donec euismod magna in porttitor pulvinar. Donec sit amet felis ac dolor mattis lacinia vel non ipsum. Pellentesque porttitor non erat nec rhoncus. Nunc condimentum dolor id aliquet pellentesque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam suscipit, nisl in fringilla bibendum, purus purus dapibus quam, porttitor iaculis nibh leo eu justo. Phasellus porttitor, magna id mattis tempor, erat mauris tristique libero, sit amet aliquet felis purus vel odio. Vivamus auctor, mauris quis ullamcorper suscipit, ex nisl molestie metus, ut sagittis erat quam quis mi.
+                                            <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper tellus at euismod elementum. Aenean et lorem purus. Praesent ullamcorper nisl tortor. Donec euismod magna in porttitor pulvinar. Donec sit amet felis ac dolor mattis lacinia vel non ipsum. Pellentesque porttitor non erat nec rhoncus. Nunc condimentum dolor id aliquet pellentesque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam suscipit, nisl in fringilla bibendum, purus purus dapibus quam, porttitor iaculis nibh leo eu justo. Phasellus porttitor, magna id mattis tempor, erat mauris tristique libero, sit amet aliquet felis purus vel odio. Vivamus auctor, mauris quis ullamcorper suscipit, ex nisl molestie metus, ut sagittis erat quam quis mi.
 
-Sed in vehicula tellus. Sed egestas vulputate purus, quis venenatis odio facilisis a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc molestie nulla a tortor volutpat malesuada. Ut rhoncus odio quis tellus blandit, at dignissim erat condimentum. Nulla non euismod arcu. Sed libero tortor, commodo sit amet pulvinar quis, convallis ac nunc. Cras eu lectus massa. Integer aliquam maximus nulla, ut efficitur erat lobortis at. Vivamus eu maximus odio. Fusce viverra erat fermentum feugiat luctus.</mutableString>
+Sed in vehicula tellus. Sed egestas vulputate purus, quis venenatis odio facilisis a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc molestie nulla a tortor volutpat malesuada. Ut rhoncus odio quis tellus blandit, at dignissim erat condimentum. Nulla non euismod arcu. Sed libero tortor, commodo sit amet pulvinar quis, convallis ac nunc. Cras eu lectus massa. Integer aliquam maximus nulla, ut efficitur erat lobortis at. Vivamus eu maximus odio. Fusce viverra erat fermentum feugiat luctus.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -154,13 +154,13 @@ Sed in vehicula tellus. Sed egestas vulputate purus, quis venenatis odio facilis
                                             <exclude reference="vQd-x9-9a8"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="81G-Co-h6y"/>
-                                            <exclude reference="PNo-NS-8vD"/>
-                                            <exclude reference="kYY-S3-tQe"/>
                                             <exclude reference="4No-tX-KoL"/>
                                             <exclude reference="g7j-mT-BRM"/>
                                             <exclude reference="hND-no-gWP"/>
                                             <exclude reference="kGD-FE-452"/>
+                                            <exclude reference="81G-Co-h6y"/>
+                                            <exclude reference="PNo-NS-8vD"/>
+                                            <exclude reference="kYY-S3-tQe"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
@@ -169,13 +169,13 @@ Sed in vehicula tellus. Sed egestas vulputate purus, quis venenatis odio facilis
                                             <include reference="vQd-x9-9a8"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="81G-Co-h6y"/>
-                                            <include reference="PNo-NS-8vD"/>
-                                            <include reference="kYY-S3-tQe"/>
                                             <include reference="4No-tX-KoL"/>
                                             <include reference="g7j-mT-BRM"/>
                                             <include reference="hND-no-gWP"/>
                                             <include reference="kGD-FE-452"/>
+                                            <include reference="81G-Co-h6y"/>
+                                            <include reference="PNo-NS-8vD"/>
+                                            <include reference="kYY-S3-tQe"/>
                                         </mask>
                                     </variation>
                                 </view>
