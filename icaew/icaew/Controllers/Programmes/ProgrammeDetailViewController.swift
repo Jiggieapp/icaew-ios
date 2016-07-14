@@ -59,6 +59,9 @@ class ProgrammeDetailViewController: BaseViewController, MFMailComposeViewContro
     
     // MARK: Action
     @IBAction func didTapShareButton(sender: AnyObject) {
+        let activityViewController = UIActivityViewController(activityItems: [self.detailLabel.attributedText!, NSURL(string: programme.youtubeURL)!], applicationActivities: nil)
+        
+        self.presentViewController(activityViewController, animated: true, completion: nil)
     }
     
     @IBAction func didTapLikeButton(sender: AnyObject) {
