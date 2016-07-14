@@ -370,6 +370,7 @@
 				22CD0A91F566F7A2658E0752 /* [CP] Copy Pods Resources */,
 				3E0CA8C9E3F20A0EF378ADCF /* 📦 Embed Pods Frameworks */,
 				196D2B5B945EE40EBEAF4F9E /* 📦 Copy Pods Resources */,
+				DA33B47B1D3798C8006D1291 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -732,6 +733,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		DA33B47B1D3798C8006D1291 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
 		F9D7CC23F497D3208E36BB92 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -915,7 +929,7 @@
 				INFOPLIST_FILE = icaew/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.partyhost.icaew;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jtech.icaew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -930,7 +944,7 @@
 				INFOPLIST_FILE = icaew/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.partyhost.icaew;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jtech.icaew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

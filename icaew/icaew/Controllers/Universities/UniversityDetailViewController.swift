@@ -42,10 +42,13 @@ class UniversityDetailViewController: BaseViewController {
             case .Success(let universities):
                 self.universities = universities
                 
-                let university = self.universities![0]
-                self.addressLabel.text = "Address: " + university.address
-                self.phoneLabel.text = "Phone: " + university.phoneNumber
-                self.emailLabel.text = "Email: " + university.emailAddress
+                if self.universities?.count > 0 {
+                    let university = self.universities![0]
+                    self.addressLabel.text = "Address: " + university.address
+                    self.phoneLabel.text = "Phone: " + university.phoneNumber
+                    self.emailLabel.text = "Email: " + university.emailAddress
+
+                }
                 
             case .Error(_):
                 break
