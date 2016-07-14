@@ -7,6 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UniversityDetailViewController" customModule="icaew" customModuleProvider="target">
             <connections>
+                <outlet property="addressLabel" destination="9PF-Pa-3yr" id="mXR-4m-jLK"/>
+                <outlet property="emailLabel" destination="Rc2-4b-c4N" id="3pr-ob-mXY"/>
+                <outlet property="phoneLabel" destination="uPW-FF-HJY" id="pDb-Ix-4zF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +17,106 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For more information on the programme and/or the Credit for Prior Learning (CPD), please contact ICAEW local office near you." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfW-7G-FSo">
+                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address: " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PF-Pa-3yr">
+                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rc2-4b-c4N">
+                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="jBH-Th-wLb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="jBH-Th-wLb"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="jBH-Th-wLb"/>
+                        </mask>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPW-FF-HJY">
+                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="uPW-FF-HJY" firstAttribute="top" secondItem="9PF-Pa-3yr" secondAttribute="bottom" constant="6" id="DqG-X4-6S7">
+                    <variation key="heightClass=regular-widthClass=compact" constant="9"/>
+                </constraint>
+                <constraint firstItem="XfW-7G-FSo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Im2-3q-JI5"/>
+                <constraint firstAttribute="trailing" secondItem="uPW-FF-HJY" secondAttribute="trailing" constant="20" id="M4u-sM-Ysw"/>
+                <constraint firstItem="9PF-Pa-3yr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="MuY-EE-kYw"/>
+                <constraint firstItem="Rc2-4b-c4N" firstAttribute="top" secondItem="uPW-FF-HJY" secondAttribute="bottom" constant="6" id="QPo-MW-kFD"/>
+                <constraint firstItem="uPW-FF-HJY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="U92-Uj-hVr"/>
+                <constraint firstAttribute="trailing" secondItem="XfW-7G-FSo" secondAttribute="trailing" constant="20" id="Wgy-xO-fKh"/>
+                <constraint firstAttribute="trailing" secondItem="9PF-Pa-3yr" secondAttribute="trailing" constant="20" id="Z64-Td-L4l"/>
+                <constraint firstItem="Rc2-4b-c4N" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="ZVt-ef-osY"/>
+                <constraint firstItem="XfW-7G-FSo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="31" id="hTU-o4-CnC"/>
+                <constraint firstAttribute="trailing" secondItem="Rc2-4b-c4N" secondAttribute="trailing" constant="20" id="krt-3m-8qK"/>
+                <constraint firstItem="9PF-Pa-3yr" firstAttribute="top" secondItem="XfW-7G-FSo" secondAttribute="bottom" constant="22" id="sRv-QZ-xgo"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="XfW-7G-FSo"/>
+                    <exclude reference="9PF-Pa-3yr"/>
+                    <exclude reference="Rc2-4b-c4N"/>
+                    <exclude reference="uPW-FF-HJY"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="Im2-3q-JI5"/>
+                    <exclude reference="Wgy-xO-fKh"/>
+                    <exclude reference="hTU-o4-CnC"/>
+                    <exclude reference="MuY-EE-kYw"/>
+                    <exclude reference="Z64-Td-L4l"/>
+                    <exclude reference="sRv-QZ-xgo"/>
+                    <exclude reference="DqG-X4-6S7"/>
+                    <exclude reference="M4u-sM-Ysw"/>
+                    <exclude reference="U92-Uj-hVr"/>
+                    <exclude reference="QPo-MW-kFD"/>
+                    <exclude reference="ZVt-ef-osY"/>
+                    <exclude reference="krt-3m-8qK"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="XfW-7G-FSo"/>
+                    <include reference="9PF-Pa-3yr"/>
+                    <include reference="Rc2-4b-c4N"/>
+                    <include reference="uPW-FF-HJY"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="Im2-3q-JI5"/>
+                    <include reference="Wgy-xO-fKh"/>
+                    <include reference="hTU-o4-CnC"/>
+                    <include reference="MuY-EE-kYw"/>
+                    <include reference="Z64-Td-L4l"/>
+                    <include reference="sRv-QZ-xgo"/>
+                    <include reference="DqG-X4-6S7"/>
+                    <include reference="M4u-sM-Ysw"/>
+                    <include reference="U92-Uj-hVr"/>
+                    <include reference="QPo-MW-kFD"/>
+                    <include reference="ZVt-ef-osY"/>
+                    <include reference="krt-3m-8qK"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

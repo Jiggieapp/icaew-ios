@@ -10,8 +10,12 @@ import UIKit
 
 class UniversityDetailViewController: BaseViewController {
 
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    
     private var country: Country!
-    private var university: University?
+    private var universities: [University]?
     
     convenience init(country: Country) {
         self.init(nibName: "UniversityDetailViewController", bundle: nil)
@@ -23,6 +27,7 @@ class UniversityDetailViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         self.setupView()
+        self.loadData()
     }
 
     func setupView() {
@@ -34,8 +39,13 @@ class UniversityDetailViewController: BaseViewController {
         self.showHUD()
         University.retrieveUniversityDetail(self.country.id, completionHandler: {(result) in
             switch result {
-            case .Success(let university):
-                self.university = university
+            case .Success(let universities):
+                self.universities = universities
+                
+                let university = self.universities![0]
+                self.addressLabel.text = "Address: " + university.address
+                self.phoneLabel.text = "Phone: " + university.phoneNumber
+                self.emailLabel.text = "Email: " + university.emailAddress
                 
             case .Error(_):
                 break

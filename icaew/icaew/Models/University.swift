@@ -9,7 +9,7 @@
 import UIKit
 import Mantle
 
-typealias UniversityCompletionHandler = (result: APIResult<University>) -> Void
+typealias UniversityCompletionHandler = (result: APIResult<[University]>) -> Void
 
 class University: MTLModel, MTLJSONSerializing {
     
@@ -38,18 +38,18 @@ class University: MTLModel, MTLJSONSerializing {
         
         if let request = NetworkManager.request(.GET, APIEndpoint.University, parameters: params) {
             request.responseJSON(completionHandler: { (response) in
-                let result: APIResult<University>!
+                let result: APIResult<[University]>!
                 switch response.result {
                 case .Success(let json):
                     do {
-                        guard let data = json["data"] as? [String : AnyObject] else {
+                        guard let data = json["data"] as? [AnyObject] else {
                             result = .Error(NSError.errorWithJSON(json))
                             break
                         }
                         
-                        let university = try MTLJSONAdapter.modelOfClass(University.self, fromJSONDictionary: data) as! University
+                        let universities = try MTLJSONAdapter.modelsOfClass(University.self, fromJSONArray: data) as! [University]
                         
-                        result = .Success(university)
+                        result = .Success(universities)
                     } catch (let error) {
                         result = .Error(error as NSError)
                     }
