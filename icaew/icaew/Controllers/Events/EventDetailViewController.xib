@@ -11,7 +11,7 @@
                 <outlet property="dateLabel" destination="JDT-sR-KzG" id="c7H-KY-Yhn"/>
                 <outlet property="detailLabel" destination="vQd-x9-9a8" id="CHX-QA-LN3"/>
                 <outlet property="roundedView" destination="qBO-ii-x03" id="6To-F8-dmV"/>
-                <outlet property="subtitleLabel" destination="U6x-e5-nPa" id="vOQ-4R-QAn"/>
+                <outlet property="summaryLabel" destination="U6x-e5-nPa" id="axX-re-l3d"/>
                 <outlet property="titleLabel" destination="5d8-MX-qr7" id="83N-dp-8ZR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -90,6 +90,9 @@
                                                 <constraint firstItem="MNN-zy-F78" firstAttribute="top" secondItem="U6x-e5-nPa" secondAttribute="bottom" constant="18.5" id="5Ef-SG-4h0">
                                                     <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                                                 </constraint>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5d8-MX-qr7" secondAttribute="trailing" constant="160" id="Bij-th-9Tc">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                                                </constraint>
                                                 <constraint firstItem="5d8-MX-qr7" firstAttribute="top" secondItem="7TT-hE-Sf4" secondAttribute="top" constant="18.5" id="RoT-1f-9tS">
                                                     <variation key="heightClass=regular-widthClass=compact" constant="17"/>
                                                 </constraint>
@@ -108,11 +111,12 @@
                                                     <exclude reference="MNN-zy-F78"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="Th1-Nk-HLK"/>
+                                                    <exclude reference="Bij-th-9Tc"/>
                                                     <exclude reference="5Ef-SG-4h0"/>
                                                     <exclude reference="WXd-fR-Lyg"/>
                                                     <exclude reference="jmx-r9-bJx"/>
                                                     <exclude reference="pzs-Ew-UXF"/>
+                                                    <exclude reference="Th1-Nk-HLK"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -120,11 +124,12 @@
                                                     <include reference="MNN-zy-F78"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="Th1-Nk-HLK"/>
+                                                    <include reference="Bij-th-9Tc"/>
                                                     <include reference="5Ef-SG-4h0"/>
                                                     <include reference="WXd-fR-Lyg"/>
                                                     <include reference="jmx-r9-bJx"/>
                                                     <include reference="pzs-Ew-UXF"/>
+                                                    <include reference="Th1-Nk-HLK"/>
                                                 </mask>
                                             </variation>
                                         </view>
@@ -134,7 +139,7 @@
 
 Sed in vehicula tellus. Sed egestas vulputate purus, quis venenatis odio facilisis a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc molestie nulla a tortor volutpat malesuada. Ut rhoncus odio quis tellus blandit, at dignissim erat condimentum. Nulla non euismod arcu. Sed libero tortor, commodo sit amet pulvinar quis, convallis ac nunc. Cras eu lectus massa. Integer aliquam maximus nulla, ut efficitur erat lobortis at. Vivamus eu maximus odio. Fusce viverra erat fermentum feugiat luctus.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>

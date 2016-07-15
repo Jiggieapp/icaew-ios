@@ -14,7 +14,7 @@ class EventDetailViewController: BaseViewController {
     @IBOutlet var roundedView: UIView!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var subtitleLabel: UILabel!
+    @IBOutlet var summaryLabel: UILabel!
     @IBOutlet var detailLabel: UILabel!
     
     private(set) var event: Event!
@@ -63,7 +63,7 @@ class EventDetailViewController: BaseViewController {
         }
         
         self.titleLabel.text = self.event.title
-        self.subtitleLabel.text = self.event.subtitle
+        self.summaryLabel.text = self.event.summary
         self.detailLabel.text = self.event.detail
     }
 }

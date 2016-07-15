@@ -15,7 +15,7 @@ class Event: MTLModel, MTLJSONSerializing {
     
     private(set) var id = 0
     private(set) var title = ""
-    private(set) var subtitle = ""
+    private(set) var summary = ""
     private(set) var detail = ""
     private(set) var startDate = ""
     private(set) var countryName = ""
@@ -24,8 +24,8 @@ class Event: MTLModel, MTLJSONSerializing {
     static func JSONKeyPathsByPropertyKey() -> [NSObject : AnyObject]! {
         return ["id" : "id",
                 "title" : "title",
-                "subtitle" : "description",
-                "detail" : "summary",
+                "summary" : "summary",
+                "detail" : "description",
                 "startDate" : "start_date",
                 "countryName" : "country_name"]
     }
