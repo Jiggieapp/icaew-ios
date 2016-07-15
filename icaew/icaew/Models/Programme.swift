@@ -19,6 +19,7 @@ class Programme: MTLModel, MTLJSONSerializing {
     private(set) var detail = ""
     private(set) var imageURL = ""
     private(set) var youtubeURL = ""
+    private(set) var isBanner = false
     
     
     static func JSONKeyPathsByPropertyKey() -> [NSObject : AnyObject]! {
@@ -27,7 +28,8 @@ class Programme: MTLModel, MTLJSONSerializing {
                 "initial" : "initial",
                 "detail" : "description",
                 "imageURL" : "image",
-                "youtubeURL" : "youtube"]
+                "youtubeURL" : "youtube",
+                "isBanner" : "is_banner"]
     }
     
     static func retrieveProgrammes(completionHandler: ProgrammesCompletionHandler) {

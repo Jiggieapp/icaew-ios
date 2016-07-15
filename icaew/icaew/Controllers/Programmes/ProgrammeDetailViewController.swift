@@ -26,23 +26,9 @@ class ProgrammeDetailViewController: BaseViewController, MFMailComposeViewContro
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var detail = self.programme.detail
-        detail += "<style>body{font-family: '\(self.detailLabel.font.fontName)'; font-size: \(self.detailLabel.font.pointSize)px; color: #000000;}</style>"
-        
-        if let htmlData = detail.dataUsingEncoding(NSUnicodeStringEncoding) {
-            do {
-                let attributedText = try NSAttributedString(data: htmlData, options: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute : NSUTF8StringEncoding], documentAttributes: nil)
-                self.detailLabel.text = nil
-                self.detailLabel.attributedText = attributedText
-            } catch let error {
-                print("Couldn't translate \(description): \(error) ")
-            }
-        } else {
-            self.detailLabel.attributedText = nil
-            self.detailLabel.text = self.programme.detail
-        }
-        
         let videoId = self.programme.youtubeURL.componentsSeparatedByString("watch?v=").last!
+        
+        self.detailLabel.text = self.programme.detail
         self.playerView.loadWithVideoId(videoId)
     }
     

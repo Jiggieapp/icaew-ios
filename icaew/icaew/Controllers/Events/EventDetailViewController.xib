@@ -143,7 +143,9 @@ Sed in vehicula tellus. Sed egestas vulputate purus, quis venenatis odio facilis
                                         <constraint firstAttribute="trailing" secondItem="vQd-x9-9a8" secondAttribute="trailing" constant="8" id="4No-tX-KoL"/>
                                         <constraint firstItem="7TT-hE-Sf4" firstAttribute="top" secondItem="gT8-xr-Y9G" secondAttribute="top" id="81G-Co-h6y"/>
                                         <constraint firstAttribute="trailing" secondItem="7TT-hE-Sf4" secondAttribute="trailing" id="PNo-NS-8vD"/>
-                                        <constraint firstAttribute="bottom" secondItem="vQd-x9-9a8" secondAttribute="bottom" id="g7j-mT-BRM"/>
+                                        <constraint firstAttribute="bottom" secondItem="vQd-x9-9a8" secondAttribute="bottom" id="g7j-mT-BRM">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                                        </constraint>
                                         <constraint firstItem="vQd-x9-9a8" firstAttribute="top" secondItem="7TT-hE-Sf4" secondAttribute="bottom" constant="9" id="hND-no-gWP"/>
                                         <constraint firstItem="vQd-x9-9a8" firstAttribute="leading" secondItem="gT8-xr-Y9G" secondAttribute="leading" constant="8" id="kGD-FE-452"/>
                                         <constraint firstItem="7TT-hE-Sf4" firstAttribute="leading" secondItem="gT8-xr-Y9G" secondAttribute="leading" id="kYY-S3-tQe"/>

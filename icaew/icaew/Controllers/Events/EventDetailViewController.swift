@@ -63,37 +63,7 @@ class EventDetailViewController: BaseViewController {
         }
         
         self.titleLabel.text = self.event.title
-        
-        var subtitle = event.subtitle
-        subtitle += "<style>body{font-family: '\(self.subtitleLabel.font.fontName)'; font-size: \(self.subtitleLabel.font.pointSize)px; color: #787878;}</style>"
-        
-        if let htmlData = subtitle.dataUsingEncoding(NSUnicodeStringEncoding) {
-            do {
-                let attributedText = try NSAttributedString(data: htmlData, options: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute : NSUTF8StringEncoding], documentAttributes: nil)
-                self.subtitleLabel.text = nil
-                self.subtitleLabel.attributedText = attributedText
-            } catch let error {
-                print("Couldn't translate \(description): \(error) ")
-            }
-        } else {
-            self.subtitleLabel.attributedText = nil
-            self.subtitleLabel.text = self.event.subtitle
-        }
-        
-        var detail = event.detail
-        detail += "<style>body{font-family: '\(self.detailLabel.font.fontName)'; font-size: \(self.detailLabel.font.pointSize)px; color: #000000;}</style>"
-        
-        if let htmlData = detail.dataUsingEncoding(NSUnicodeStringEncoding) {
-            do {
-                let attributedText = try NSAttributedString(data: htmlData, options: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute : NSUTF8StringEncoding], documentAttributes: nil)
-                self.detailLabel.text = nil
-                self.detailLabel.attributedText = attributedText
-            } catch let error {
-                print("Couldn't translate \(description): \(error) ")
-            }
-        } else {
-            self.detailLabel.attributedText = nil
-            self.detailLabel.text = self.event.detail
-        }
+        self.subtitleLabel.text = self.event.subtitle
+        self.detailLabel.text = self.event.detail
     }
 }

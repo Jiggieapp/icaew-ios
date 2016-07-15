@@ -48,6 +48,15 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
             switch result {
             case .Success(let programmes):
                 self.programmes = programmes
+                
+                let predicate = NSPredicate(format: "SELF.isBanner == 1")
+                let programmes = (programmes as NSArray).filteredArrayUsingPredicate(predicate) as! [Programme]
+                
+                if let programme = programmes.first {
+                    self.headerImageView.sd_setImageWithURL(NSURL(string: programme.imageURL),
+                        placeholderImage: UIImage(named: "image-home")!)
+                }
+                
                 self.tableView.reloadData()
                 
             case .Error(_):
@@ -94,22 +103,7 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
             let programme = programmes[indexPath.section]
             cell.initialLabel.text = programme.initial.uppercaseString
             cell.titleLabel.text = programme.title.uppercaseString
-            
-            var detail = programme.detail
-            detail += "<style>body{font-family: '\(cell.detailLabel.font.fontName)'; font-size: \(cell.detailLabel.font.pointSize)px; color: #787878;}</style>"
-            
-            if let htmlData = detail.dataUsingEncoding(NSUnicodeStringEncoding) {
-                do {
-                    let attributedText = try NSAttributedString(data: htmlData, options: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute : NSUTF8StringEncoding], documentAttributes: nil)
-                    cell.detailLabel.text = nil
-                    cell.detailLabel.attributedText = attributedText
-                } catch let error {
-                    print("Couldn't translate \(description): \(error) ")
-                }
-            } else {
-                cell.detailLabel.attributedText = nil
-                cell.detailLabel.text = programme.detail
-            }
+            cell.detailLabel.text = programme.detail
         }
         
         return cell
@@ -121,6 +115,11 @@ class ProgrammesViewController: BaseViewController, UITableViewDataSource, UITab
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if let programmes = self.programmes
+            where programmes.count-1 == section {
+            return 10
+        }
+        
         return 0.001
     }
     

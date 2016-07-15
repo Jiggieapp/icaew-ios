@@ -33,21 +33,26 @@ class Contact: MTLModel, MTLJSONSerializing {
                 "websiteAddress" : "website"]
     }
     
-    static func retrieveContactDetail(id id: Int, completionHandler: ContactDetailCompletionHandler) {
-        if let request = NetworkManager.request(.GET, APIEndpoint.Contact+"\(id)") {
+    static func retrieveContactDetail(countryId id: Int, completionHandler: ContactDetailCompletionHandler) {
+        let parameters: [String : AnyObject] = ["country_id" : id]
+        if let request = NetworkManager.request(.GET, APIEndpoint.Contact, parameters: parameters) {
             request.responseJSON(completionHandler: { (response) in
                 let result: APIResult<Contact>!
                 switch response.result {
                 case .Success(let json):
                     do {
-                        guard let data = json["data"] as? [String : AnyObject] else {
+                        guard let data = json["data"] as? [AnyObject] else {
                             result = .Error(NSError.errorWithJSON(json))
                             break
                         }
                         
-                        let contact = try MTLJSONAdapter.modelOfClass(Contact.self, fromJSONDictionary: data) as! Contact
+                        let contacts = try MTLJSONAdapter.modelsOfClass(Contact.self, fromJSONArray: data) as! [Contact]
                         
-                        result = .Success(contact)
+                        if let contact = contacts.first {
+                            result = .Success(contact)
+                        } else {
+                            result = .Success(Contact())
+                        }
                     } catch (let error) {
                         result = .Error(error as NSError)
                     }
