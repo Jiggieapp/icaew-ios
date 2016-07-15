@@ -62,7 +62,7 @@ class Programme: MTLModel, MTLJSONSerializing {
     }
     
     static func likeProgramme(id id: Int, completionHandler: LikeProgrammeCompletionHandler? = nil) {
-        if let request = NetworkManager.request(.PUT, APIEndpoint.LikeProgramme+"\(id)") {
+        if let request = NetworkManager.request(.GET, APIEndpoint.LikeProgramme+"\(id)") {
             request.responseJSON(completionHandler: { (response) in
                 let result: APIResult<Int>!
                 switch response.result {
