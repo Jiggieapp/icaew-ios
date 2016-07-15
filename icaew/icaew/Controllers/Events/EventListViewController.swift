@@ -81,7 +81,7 @@ class EventListViewController: BaseViewController, UITableViewDataSource, UITabl
         cell.roundedView.backgroundColor = UIColor(hexString: "05D3BB")
         
         if let events = self.events {
-            let event = events[indexPath.row]
+            let event = events[indexPath.section]
             
             let date = NSDate.dateFromString("yyyy-MM-dd HH:mm:ss", string: event.startDate)
             
@@ -120,7 +120,7 @@ class EventListViewController: BaseViewController, UITableViewDataSource, UITabl
         
         if let events = self.events {
             self.removeBackButtonTitle()
-            self.navigationController?.pushViewController(EventDetailViewController(event: events[indexPath.row]),
+            self.navigationController?.pushViewController(EventDetailViewController(event: events[indexPath.section]),
                                                           animated: true)
         }
     }
