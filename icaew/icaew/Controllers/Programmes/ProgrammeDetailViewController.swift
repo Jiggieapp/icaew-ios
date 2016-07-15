@@ -51,6 +51,7 @@ class ProgrammeDetailViewController: BaseViewController, MFMailComposeViewContro
     }
     
     @IBAction func didTapLikeButton(sender: AnyObject) {
+        Programme.likeProgramme(id: self.programme.id)
     }
     
     @IBAction func didTapInquiryButton(sender: AnyObject) {

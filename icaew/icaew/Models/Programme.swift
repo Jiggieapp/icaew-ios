@@ -10,6 +10,7 @@ import UIKit
 import Mantle
 
 typealias ProgrammesCompletionHandler = (result: APIResult<[Programme]>) -> Void
+typealias LikeProgrammeCompletionHandler = (result: APIResult<Int>) -> Void
 
 class Programme: MTLModel, MTLJSONSerializing {
     
@@ -56,6 +57,34 @@ class Programme: MTLModel, MTLJSONSerializing {
                 }
                 
                 completionHandler(result: result)
+            })
+        }
+    }
+    
+    static func likeProgramme(id id: Int, completionHandler: LikeProgrammeCompletionHandler? = nil) {
+        if let request = NetworkManager.request(.PUT, APIEndpoint.LikeProgramme+"\(id)") {
+            request.responseJSON(completionHandler: { (response) in
+                let result: APIResult<Int>!
+                switch response.result {
+                case .Success(let json):
+                    guard let data = json["data"] as? [String : AnyObject] else {
+                        result = .Error(NSError.errorWithJSON(json))
+                        break
+                    }
+                    
+                    if let count = data["count"] as? Int {
+                        result = .Success(count)
+                    } else {
+                        result = .Success(0)
+                    }
+                    
+                case .Failure(let error):
+                    result = .Error(error)
+                }
+                
+                if let completionHandler = completionHandler {
+                    completionHandler(result: result)
+                }
             })
         }
     }

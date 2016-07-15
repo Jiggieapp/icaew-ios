@@ -26,6 +26,7 @@ public enum APIResult<Value> {
 public struct APIEndpoint {
     
     static let Programme = "program/"
+    static let LikeProgramme = "program_like/"
     static let Country = "country/"
     static let Events = "event/"
     static let Contact = "contact/"
