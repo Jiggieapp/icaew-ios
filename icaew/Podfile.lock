@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (3.4.0)
+  - Crashlytics (3.7.2):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.7)
   - Mantle (2.0.7):
     - Mantle/extobjc (= 2.0.7)
   - Mantle/extobjc (2.0.7)
@@ -14,6 +17,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
+  - Crashlytics
+  - Fabric
   - Mantle (~> 2.0)
   - SDWebImage (~> 3.8)
   - SVProgressHUD (~> 2.0)
@@ -24,6 +29,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  Crashlytics: 130ab943f8c78cda7a814b434f270b2e2c8a3cba
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
@@ -32,6 +39,6 @@ SPEC CHECKSUMS:
   UIAlertControllerExtension: d3aaf48590f182096b8bb81997ae54f24ccc07ab
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: d72a17c2af64736a8f6be18c01c4b142c961dddf
+PODFILE CHECKSUM: 8fffd75a89c47fdf15bab6338da3cb9fc3840ef4
 
 COCOAPODS: 1.0.1
