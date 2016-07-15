@@ -15,6 +15,8 @@ class UniversityDetailViewController: BaseViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
+    
     private var country: Country!
     private var universities: [University]?
     
@@ -50,6 +52,10 @@ class UniversityDetailViewController: BaseViewController {
                     self.phoneLabel.text = "Phone: " + university.phoneNumber
                     self.emailLabel.text = "Email: " + university.emailAddress
 
+                    let triggerTime = (Int64(1) * 10)
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, triggerTime), dispatch_get_main_queue(), { () -> Void in
+                        self.updateScrollHeight()
+                    })
                 }
                 
             case .Error(_):
@@ -58,6 +64,11 @@ class UniversityDetailViewController: BaseViewController {
             
             self.dismissHUD()
         })
+    }
+    
+    private func updateScrollHeight() {
+        self.contentViewHeightConstraint.constant = CGRectGetMaxY(self.emailLabel.frame) + 20
+        print(CGRectGetMaxY(self.emailLabel.frame) + 20)
     }
     
     override func didReceiveMemoryWarning() {
