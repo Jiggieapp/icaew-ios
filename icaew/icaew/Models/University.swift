@@ -21,6 +21,7 @@ class University: MTLModel, MTLJSONSerializing {
     private(set) var phoneNumber = ""
     private(set) var address = ""
     private(set) var countryName = ""
+    private(set) var descriptionInfo = ""
     
     static func JSONKeyPathsByPropertyKey() -> [NSObject : AnyObject]! {
         return ["id" : "id",
@@ -30,7 +31,8 @@ class University: MTLModel, MTLJSONSerializing {
                 "emailAddress" : "email",
                 "phoneNumber" : "phone",
                 "address" : "address",
-                "countryName" : "country_name"]
+                "countryName" : "country_name",
+                "descriptionInfo" : "description"]
     }
     
     static func retrieveUniversityDetail(countryID: Int , completionHandler: UniversityCompletionHandler) {
@@ -42,6 +44,7 @@ class University: MTLModel, MTLJSONSerializing {
                 switch response.result {
                 case .Success(let json):
                     do {
+                        print(json)
                         guard let data = json["data"] as? [AnyObject] else {
                             result = .Error(NSError.errorWithJSON(json))
                             break

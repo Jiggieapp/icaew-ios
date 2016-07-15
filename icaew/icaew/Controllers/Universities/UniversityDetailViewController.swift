@@ -10,6 +10,7 @@ import UIKit
 
 class UniversityDetailViewController: BaseViewController {
 
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -44,6 +45,7 @@ class UniversityDetailViewController: BaseViewController {
                 
                 if self.universities?.count > 0 {
                     let university = self.universities![0]
+                    self.descriptionLabel.text = university.descriptionInfo
                     self.addressLabel.text = "Address: " + university.address
                     self.phoneLabel.text = "Phone: " + university.phoneNumber
                     self.emailLabel.text = "Email: " + university.emailAddress
