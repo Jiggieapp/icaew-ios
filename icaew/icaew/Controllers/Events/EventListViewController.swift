@@ -92,7 +92,7 @@ class EventListViewController: BaseViewController, UITableViewDataSource, UITabl
             }
             
             cell.titleLabel.text = event.title
-            cell.detailLabel.text = event.subtitle
+            cell.detailLabel.text = event.summary
         }
         
         return cell
