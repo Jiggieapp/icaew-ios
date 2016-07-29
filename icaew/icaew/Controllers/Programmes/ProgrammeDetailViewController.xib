@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="detailLabel" destination="akT-IT-DqC" id="PZA-5p-R3f"/>
                 <outlet property="playerView" destination="7FA-sJ-hW4" id="Qr8-hP-30c"/>
+                <outlet property="playerViewHeightConstraint" destination="PJB-1z-F0L" id="DZJ-E4-JUP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

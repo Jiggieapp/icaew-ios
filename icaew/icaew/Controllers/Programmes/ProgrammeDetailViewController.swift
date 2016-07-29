@@ -14,6 +14,7 @@ class ProgrammeDetailViewController: BaseViewController, MFMailComposeViewContro
 
     @IBOutlet var detailLabel: UILabel!
     @IBOutlet var playerView: YTPlayerView!
+    @IBOutlet var playerViewHeightConstraint: NSLayoutConstraint!
     
     private var programme: Programme!
     
@@ -26,11 +27,9 @@ class ProgrammeDetailViewController: BaseViewController, MFMailComposeViewContro
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let videoId = self.programme.youtubeURL.componentsSeparatedByString("watch?v=").last!
-        
         self.detailLabel.text = self.programme.detail
         
-        var description = programme.detail
+        var description = self.programme.detail
         description += "<style>body{font-family: '\(self.detailLabel.font.fontName)'; font-size: \(self.detailLabel.font.pointSize)px; color: #000000;} img{height: \(UIScreen.width() - 50)px; width: \(UIScreen.width() - 50)px;}</style>"
         
         if let htmlData = description.dataUsingEncoding(NSUnicodeStringEncoding) {
@@ -46,7 +45,15 @@ class ProgrammeDetailViewController: BaseViewController, MFMailComposeViewContro
             self.detailLabel.text = description
         }
         
-        self.playerView.loadWithVideoId(videoId)
+        if let videoId = self.programme.youtubeURL.componentsSeparatedByString("watch?v=").last {
+            if videoId.characters.count > 0 {
+                self.playerView.loadWithVideoId(videoId)
+            } else {
+                self.playerViewHeightConstraint.constant = 0
+            }
+        } else {
+            self.playerViewHeightConstraint.constant = 0
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
