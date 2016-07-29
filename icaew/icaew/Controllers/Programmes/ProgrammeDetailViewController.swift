@@ -31,7 +31,7 @@ class ProgrammeDetailViewController: BaseViewController, MFMailComposeViewContro
         self.detailLabel.text = self.programme.detail
         
         var description = programme.detail
-        description += "<style>body{font-family: '\(self.detailLabel.font.fontName)'; font-size: \(self.detailLabel.font.pointSize)px; color: #000000;}</style>"
+        description += "<style>body{font-family: '\(self.detailLabel.font.fontName)'; font-size: \(self.detailLabel.font.pointSize)px; color: #000000;} img{height: \(UIScreen.width() - 50)px; width: \(UIScreen.width() - 50)px;}</style>"
         
         if let htmlData = description.dataUsingEncoding(NSUnicodeStringEncoding) {
             do {
