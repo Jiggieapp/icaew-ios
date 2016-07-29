@@ -19,7 +19,6 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
     private var items = [[String : String]]()
     private var country: Country!
     
-    
     convenience init(country: Country) {
         self.init(nibName: "ContactDetailViewController", bundle: nil)
         self.country = country
@@ -43,14 +42,25 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
         self.showHUD()
         Contact.retrieveContactDetail(countryId: country.id) { (result) in
             switch result {
-            case .Success(let contact):
-                self.items.append(["address-icon" : "ICAEW "+contact.countryName+"*#*"+contact.address])
-                self.items.append(["phone-icon" : contact.phoneNumber])
-                self.items.append(["email-icon" : contact.emailAddress])
-                self.items.append(["facebook-icon" : contact.facebookAddress])
-                self.items.append(["website-icon" : contact.websiteAddress])
-                self.headerImageView.sd_setImageWithURL(NSURL(string: contact.imageURL),
-                                                        placeholderImage: UIImage(named: "image-home")!)
+            case .Success(let contacts):
+                for contact in contacts {
+                    self.items.append(["address-icon" : "ICAEW "+contact.countryName+"*#*"+contact.address])
+                    self.items.append(["phone-icon" : contact.phoneNumber])
+                    self.items.append(["email-icon" : contact.emailAddress])
+                    
+                    if contact.facebookAddress.characters.count > 0 {
+                        self.items.append(["facebook-icon" : contact.facebookAddress])
+                    }
+                    if contact.websiteAddress.characters.count > 0 {
+                        self.items.append(["website-icon" : contact.websiteAddress])
+                    }
+                }
+                
+                if let contact = contacts.first {
+                    self.headerImageView.sd_setImageWithURL(NSURL(string: contact.imageURL),
+                                                            placeholderImage: UIImage(named: "image-home")!)
+                }
+                
                 self.tableView.reloadData()
                 
             case .Error(_):
@@ -96,8 +106,9 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
         cell.backgroundColor = UIColor.clearColor()
         cell.imageView?.image = UIImage(named: item.keys.first!)
         cell.textLabel?.font = UIFont.systemFontOfSize(15)
+        cell.textLabel?.adjustsFontSizeToFitWidth = true
         
-        if indexPath.row == 0 {
+        if item.keys.first! == "address-icon" {
             let text = item.values.first!.componentsSeparatedByString("*#*")
             cell.textLabel?.text = text[0]
             cell.detailTextLabel?.numberOfLines = 0
@@ -114,7 +125,9 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
     
     // MARK: UITableViewDelegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row == 0 {
+        let item = self.items[indexPath.row]
+        
+        if item.keys.first! == "address-icon" {
             let item = self.items[indexPath.row]
             let text = item.values.first!.componentsSeparatedByString("*#*")
             

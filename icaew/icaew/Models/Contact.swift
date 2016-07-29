@@ -9,7 +9,7 @@
 import UIKit
 import Mantle
 
-typealias ContactDetailCompletionHandler = (result: APIResult<Contact>) -> Void
+typealias ContactDetailCompletionHandler = (result: APIResult<[Contact]>) -> Void
 
 class Contact: MTLModel, MTLJSONSerializing {
 
@@ -37,7 +37,7 @@ class Contact: MTLModel, MTLJSONSerializing {
         let parameters: [String : AnyObject] = ["country_id" : id]
         if let request = NetworkManager.request(.GET, APIEndpoint.Contact, parameters: parameters) {
             request.responseJSON(completionHandler: { (response) in
-                let result: APIResult<Contact>!
+                let result: APIResult<[Contact]>!
                 switch response.result {
                 case .Success(let json):
                     do {
@@ -48,11 +48,7 @@ class Contact: MTLModel, MTLJSONSerializing {
                         
                         let contacts = try MTLJSONAdapter.modelsOfClass(Contact.self, fromJSONArray: data) as! [Contact]
                         
-                        if let contact = contacts.first {
-                            result = .Success(contact)
-                        } else {
-                            result = .Success(Contact())
-                        }
+                        result = .Success(contacts)
                     } catch (let error) {
                         result = .Error(error as NSError)
                     }
