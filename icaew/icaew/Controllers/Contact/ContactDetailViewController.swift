@@ -118,7 +118,7 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
             
             if indexPath.row != 0 {
                 let width = UIScreen.width() / 3
-                let separatorView = UIView(frame: CGRectMake((UIScreen.width() / 2 - width / 2), 5, width, 0.5))
+                let separatorView = UIView(frame: CGRectMake((UIScreen.width() / 2 - width / 2), 8, width, 0.5))
                 separatorView.backgroundColor = UIColor.lightGrayColor()
                 cell.addSubview(separatorView)
             }
