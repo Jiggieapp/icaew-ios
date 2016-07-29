@@ -14,7 +14,6 @@ class ProgrammesTableViewCell: UITableViewCell {
     @IBOutlet var roundedView: UIView!
     @IBOutlet var initialLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var detailLabel: UILabel!
     
     static func nib() -> UINib {
         return UINib(nibName: "ProgrammesTableViewCell", bundle: nil)
