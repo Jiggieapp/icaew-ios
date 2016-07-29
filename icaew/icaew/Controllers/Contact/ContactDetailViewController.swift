@@ -115,6 +115,13 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
             cell.detailTextLabel?.font = UIFont.systemFontOfSize(15)
             cell.detailTextLabel?.text = text[1]
             cell.detailTextLabel?.textColor = UIColor.lightGrayColor()
+            
+            if indexPath.row != 0 {
+                let width = UIScreen.width() / 3
+                let separatorView = UIView(frame: CGRectMake((UIScreen.width() / 2 - width / 2), 5, width, 0.5))
+                separatorView.backgroundColor = UIColor.lightGrayColor()
+                cell.addSubview(separatorView)
+            }
         } else {
             cell.textLabel?.text = item.values.first!
             cell.detailTextLabel?.text = nil
@@ -130,6 +137,11 @@ class ContactDetailViewController: BaseViewController, UITableViewDataSource, UI
         if item.keys.first! == "address-icon" {
             let item = self.items[indexPath.row]
             let text = item.values.first!.componentsSeparatedByString("*#*")
+            
+            if indexPath.row != 0 {
+                return 50 + text[1].getTextHeight(CGRectGetWidth(tableView.bounds) - 90,
+                                                  font: UIFont.systemFontOfSize(15))
+            }
             
             return 30 + text[1].getTextHeight(CGRectGetWidth(tableView.bounds) - 90,
                                               font: UIFont.systemFontOfSize(15))
