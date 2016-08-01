@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SDWebImage
 import Mantle
+import youtube_ios_player_helper
 
 private let kTableHeaderViewHeight: CGFloat = 213
 
@@ -43,10 +44,10 @@ class AboutViewController: BaseViewController, UITableViewDataSource {
         headerView.addSubview(headerImageView)
         
         self.tableView.tableHeaderView = headerView
-        self.tableView.tableFooterView = UIView()
         self.tableView.registerNib(DynamicTextCell.nib(),
                                    forCellReuseIdentifier: kAboutDynamicTextCellIdentifier)
         self.tableView.estimatedRowHeight = 80;
+        
         self.tableView.setNeedsLayout()
         self.tableView.layoutIfNeeded()
     }
@@ -70,6 +71,19 @@ class AboutViewController: BaseViewController, UITableViewDataSource {
                                 
                                 if let title = aboutDict["title"] as? String {
                                     self.setupNavigationBar(title: title.uppercaseString)
+                                }
+                                
+                                if let youtubeURL = aboutDict["youtube"] as? String {
+                                    if let videoId = youtubeURL.componentsSeparatedByString("watch?v=").last {
+                                        let footerView = UIView(frame: CGRectMake(0, 0, UIScreen.width(), 220))
+                                        let playerView = YTPlayerView(frame: CGRectMake(0, 0, UIScreen.width() - 30, 190))
+                                        footerView.addSubview(playerView)
+                                        playerView.center = footerView.center
+                                        
+                                        self.tableView.tableFooterView = footerView
+                                        
+                                        playerView.loadWithVideoId(videoId)
+                                    }
                                 }
                             }
                             self.tableView.reloadData()
